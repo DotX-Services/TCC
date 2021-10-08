@@ -1,0 +1,219 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap");
+
+:root {
+  --color_principal: rgba(0, 156, 228, 0.37);
+  --color_secundaria: rgb(0, 154, 228);
+  --color_houver: rgb(3, 116, 182);
+  --font_principal: "Atkinson Hyperlegible", sans-serif;
+  --cor_letras: white;
+  --max_width: 1200px;
+  --min_width: 400px;
+  --imagem_tamanho: 400px;
+  --espaçamento_baixo: 7em;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+header {
+  background-color: var(--color_secundaria);
+  font-family: var(--font_principal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header img {
+  width: 120px;
+}
+
+nav a {
+  color: var(--cor_letras);
+  font-family: var(--font_principal);
+  font-size: 25px;
+  text-decoration: none;
+  margin: 20px;
+  min-width: 845px;
+}
+
+#menu {
+  display: none;
+}
+
+header div.traco {
+  border-left: 6px solid rgb(255, 255, 255);
+  height: 70px;
+  border-radius: 5px;
+  width: 50px;
+}
+
+div#usuario a {
+  padding: 10px 20px;
+  color: var(--cor_letras);
+  background-color: rgb(56, 182, 255);
+  border: 2px solid white;
+  border-radius: 10px;
+  font-family: var(--font_principal);
+  font-size: 20px;
+  text-decoration: none;
+}
+
+header div#usuario p {
+  flex: 2;
+  margin-right: 30px;
+}
+
+p#entrar {
+  margin-bottom: 30px;
+}
+
+main {
+  font-family: var(--font_principal);
+}
+
+div.main_branca {
+  display: block;
+  margin: 20px auto;
+  padding-top: 20px;
+  padding-bottom: 12em;
+  min-width: var(--min_width);
+  max-width: var(--max_width);
+}
+
+div.main_branca img {
+  float: left;
+  width: var(--imagem_tamanho);
+  margin-right: 2rem;
+}
+
+div.main_branca p {
+  height: 150px;
+}
+
+h1 {
+  font-size: 4em;
+}
+
+main p,
+ul {
+  font-size: 20px;
+}
+
+div.main_azul {
+  background-color: var(--color_principal);
+  padding-top: 20px;
+  padding-bottom: var(--espaçamento_baixo);
+  margin: 20px auto;
+  min-width: var(--min_width);
+  max-width: var(--max_width);
+}
+
+div.main_azul img {
+  float: right;
+  width: var(--imagem_tamanho);
+  margin-right: 10px;
+}
+
+#servicos {
+  padding-bottom: 1em;
+}
+
+#mapa {
+  padding-bottom: 16em;
+}
+
+iframe {
+  float: right;
+  width: var(--imagem_tamanho);
+  height: 400px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+div.main_azul p,
+h1 {
+  padding: 10px;
+}
+
+img#chatbot {
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  float: right;
+  width: 120px;
+  /*box-shadow: 2px 4px 1px #00000040;*/
+}
+
+footer {
+  background-color: var(--color_principal);
+  padding-left: 25px;
+  padding-top: 10px;
+  padding-bottom: 0px;
+}
+
+footer ul {
+  list-style: none;
+}
+
+li {
+  font-size: 18px;
+  /*Centralizar as letras*/
+}
+
+li a {
+  text-decoration: none;
+  color: black;
+  padding: 3px;
+  border-radius: 5px;
+  transition: 0.25s;
+}
+
+ul.contato i {
+  padding-right: 5px;
+  font-size: 25px;
+}
+
+section {
+  display: flex;
+}
+
+.contato {
+  flex: 1;
+}
+
+.etc {
+  flex: 1;
+}
+
+section a:hover {
+  background-color: var(--color_houver);
+  color: white;
+}
+
+/*Configurações da barra*/
+body::-webkit-scrollbar {
+  width: 10px;
+}
+body::-webkit-scrollbar-thumb {
+  background: rgb(85, 125, 236);
+}
+
+@media only screen and (max-width: 845px) {
+  nav a {
+    display: none;
+  }
+  #menu {
+    margin: 2em;
+    width: 60px;
+    display: block;
+  }
+  section {
+    flex-direction: column;
+  }
+  .etc {
+    margin-top: 10px;
+  }
+}

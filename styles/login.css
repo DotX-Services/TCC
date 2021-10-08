@@ -1,0 +1,142 @@
+/* Reset do CSS */
+:root{
+    --color_principal: rgba(0, 156, 228, 0.37);
+    --color_secundaria: rgb(0, 154, 228);
+    --font_principal: 'Atkinson Hyperlegible', sans-serif;;
+    --cor_letras: white;
+    --color_backgroud: #d9dfe0d2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Conteiner */
+
+.conteiner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #d0d8da;
+    flex-direction: column;
+    position: relative;
+    font-family: var(--font_principal);
+}
+
+/* Texto Principal */
+
+.textoPrincipal {
+    text-align: center;
+    color: var(--color_secundaria);
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* Formulário */
+
+.form-login {
+    width: 30em;
+    height: 35em;
+    display: grid;
+    background-color: white;
+    border-radius: 15px;
+    justify-content: center;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Lista midias Sociais */
+
+.div-ms {
+    justify-content: center;
+    display: flex;
+    border-bottom: 0px;
+}
+
+.ul-lista-ms {
+    display: flex;
+    list-style-type: none;
+}
+
+.li-icone-ms {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    line-height: 50px;
+    text-align: center;
+    margin: 20px 10px 10px 10px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.iconMidia {
+    font-size: 25px;
+    color: #007ca5;
+}
+
+.div-Logar {
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
+}
+
+/* inputs e seus icons */
+
+input[type = email], input[type = text], input[type = password] {
+    height: 60px;
+    width: 50vh;
+    border: 0 none;
+    border-radius: 15px;
+    background-color: var(--color_backgroud);
+    margin: 12px auto;
+    outline: 0;
+    display: block;
+    text-align: center;
+    padding: 20px;
+    transition: 0.5s;
+}
+
+input[type = email]:focus,input[type = text]:focus, input[type = password]:focus{
+    border: 2px solid var(--color_secundaria);
+    width: 52vh;
+    background-color: #ecf0f1d2;
+}
+
+/* Link esqueci a senha */
+
+.esqueci-a-senha {
+    text-align: center;
+    padding: 0px 10px;
+}
+
+/* Botão entrar */
+
+.div-btn-entrar {
+    padding: 0px 10px;
+    display: flex;
+    justify-content: center;
+    height: 40px;
+}
+
+.btn-entrar {
+    font-size: 14px;
+    font-family: var(--font_principal);
+    font-weight: bold;
+    color: white;
+    padding: 10px 60px;
+    border: 1px solid #eee;
+    border-radius: 15px;
+    background-color: var(--color_secundaria);
+    text-transform: uppercase;
+    display: block;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.btn-entrar:hover {
+    border: 1px solid var(--color_secundaria);
+    font-size: 14px;
+    color: var(--color_secundaria);
+    background-color: rgb(255, 255, 255);
+}

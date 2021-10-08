@@ -1,0 +1,82 @@
+/* RESET */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Conteiner */
+
+.conteiner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #d0d8da;
+    flex-direction: column;
+    position: relative;
+    font-family: var(--font_principal);
+}
+
+/* Titulo Principal*/
+
+h1{
+    font-size: 30px;
+    margin: 10px 0px;
+    color: var(--color_secundaria);
+}
+
+/*Formulário */
+
+form{
+    display: grid;
+    justify-content: center;
+    width: 400px;
+    height: 200px;
+    background-color: white;
+    border-radius: 15px;
+}
+
+label {
+    font-size: 18px;
+    color: gray;
+}
+
+input[type = text] {
+    height: 50px;
+    min-width: 40vh;
+    margin: 25px 0px;
+    border-radius: 15px;
+    border: 0 none;
+    background-color:#d9dfe0d2;
+    padding: 2em;
+    outline: 0;
+    text-align: center;
+    transition: 0.5s;
+    border-radius: 15px;
+}
+input[type = text]:focus{
+    border: 2px solid var(--color_secundaria);
+    min-width: 45vh;
+    background-color: #d9dfe0d2;
+}
+
+#divBotao {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    font-family: 'Oswald', sans-serif;
+    height: 40px;
+    width: 230px;
+    margin-bottom: 10px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    background-color: #1b98e0;
+    cursor: pointer;
+}
+

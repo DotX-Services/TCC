@@ -1,0 +1,160 @@
+/* Reset do CSS */
+:root{
+    --color_principal: rgba(0, 156, 228, 0.37);
+    --color_secundaria: rgb(0, 154, 228);
+    --font_principal: 'Atkinson Hyperlegible', sans-serif;;
+    --cor_letras: white;
+    --color_background: #d9dfe0d2;
+    --color_button: #ecf0f1d2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.conteiner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--color_background);
+    flex-direction: column;
+    position: relative;
+    font-family: var(--font_principal);
+}
+
+/* H1 */
+
+.textoPrincipal {
+    text-align: center;
+    color: var(--color_secundaria);
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+/* Formulário */
+
+.criarConta {
+    width: 60%;
+    height: 80%;
+    display: grid;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    justify-content: center;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    text-align: center;
+}
+
+.conteudo-Geral {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.conteudo-Esquerda {
+    margin: 0px 12px;
+}
+
+.conteudo-Direita {
+    margin: 0px 12px;
+}
+
+input[type = text], input[type = email], input[type = password], input[type = tel], input[type = date] {
+    height: 40px;
+    min-width: 40vh;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    border: 0 none;
+    background-color: var(--color_button);
+    padding: 2em;
+    outline: 0;
+    text-align: center;
+    transition: 0.5s;
+    border-radius: 15px;
+}
+input[type = text]:focus, input[type = email]:focus, input[type = password]:focus, input[type = tel]:focus, input[type = date]:focus{
+    border: 2px solid var(--color_secundaria);
+    min-width: 45vh;
+    background-color: var(--color_button);
+}
+
+/* Remoção do icon [input data] */
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+.edit-icon {
+    color: #7f8c8d;
+    padding: 0px 10px
+}
+
+/* Arrumar depois :) */
+
+.olho {
+    color: #636f70;
+    padding: 0px 10px;
+    right: 350px;
+    position: absolute;
+    cursor: pointer;
+}
+
+.botao {
+    padding: 0px 20px;
+}
+
+.btnCriarConta {
+    text-align: center;
+    font-size: 14px;
+    font-family: var(--font_principal);
+    font-weight: bold;
+    color: white;
+    padding: 10px 40px;
+    border: 1px solid #eee;
+    border-radius: 15px;
+    background-color: var(--color_secundaria);
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.btnCriarConta:hover {
+    border: 1px solid var(--color_secundaria);
+    font-size: 14px;
+    color: var(--color_secundaria);
+    background-color: rgb(255, 255, 255);
+}
+
+.possui-Conta {
+    margin-block-start: 0%;
+}
+
+.entrar-Conta {
+    margin-bottom: 50px;
+    padding: 0px 30px;
+    display: inline;
+}
+
+@media only screen and (max-width: 865px){
+    .conteudo-Geral{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .criarConta{
+        width: 90%;
+    }
+    .conteiner{
+        height: 90%;
+    }
+}
+
+

@@ -1,0 +1,56 @@
+/* RESET */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Conteiner */
+
+.conteiner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #d0d8da;
+    flex-direction: column;
+    position: relative;
+    font-family: 'Oswald', sans-serif;
+}
+
+/* Texto Principal */
+
+h1 {
+    font-size: 26px;
+}
+
+/* Formulário */
+
+form {
+    display: grid;
+    justify-content: center;
+    width: 400px;
+    height: 200px;
+    background: white;
+    border-radius: 15px;
+}
+
+input[type = password]{
+    width: 50vh;
+    border: 0 none;
+    border-radius: 15px;
+    background-color: #d9dfe0d2;
+    margin: 12px auto;
+    outline: 0;
+    display: block;
+    text-align: center;
+    padding: 20px;
+    transition: 0.5s;
+}
+
+input[type = text]:focus{
+    border: 2px solid #d9dfe0d2;
+    width: 52vh;
+    background-color: #ecf0f1d2;
+}
+
