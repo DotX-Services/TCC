@@ -61,6 +61,7 @@
             </div>
         </form>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/cleave.min.js"></script>
     <script src="scripts/script.js"></script>
 </body>
 </html>
