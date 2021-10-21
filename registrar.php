@@ -60,5 +60,7 @@
                 <button type="submit"  class="btnCriarConta">Criar Conta</button>
             </div>
         </form>
+    </div>
+    <script src="scripts/script.js"></script>
 </body>
 </html>

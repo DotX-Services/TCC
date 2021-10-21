@@ -52,21 +52,22 @@
         ?>
         <img src="media/usuario.jpeg" alt="Foto do Usuário" id="fotoUsuario">
         <form action="alterar-informacoes.php" method="POST">
-            <button type="submit">Alterar informações</button><br>
+            <button type="submit" id="btnAlterar">Alterar informações</button><br>
             
-            <br><input type="text" name="inputNome" id="inputNome" placeholder="Nome" value = "<?php echo $c->get_nome();?>">  
-            <input type="hidden" name="inputCodigo" id="inputCodigo" value = "<?php echo $c->get_codigo();?>"> 
-            <input type="date" name="inputNascimento" id="inputNascimento" placeholder="Data de Nascimento" value = "<?php echo $c->get_data();?>"> 
-            <input type="text" name="inputCPF" id="inputCPF" placeholder="CPF" value = "<?php echo $c->get_cpf();?>">
-            <input type="text" name="inputCEP" id="inputCEP" placeholder="CEP" value = "<?php echo $c->get_cep();?>">
-            <input type="text" name="inputTelefone" id="inputTelefone" placeholder="Telefone" value = "<?php echo $c->get_telefone();?>">
-            <input type="email" name="inputEmail" id="inputEmail" placeholder="Email" value = "<?php echo $c->get_email();?>"> 
-            <input type="password" name="inputSenha" id="inputSenha" placeholder="Senha" value="<?php echo $c->get_senha(); ?>">
+            <br><input type="text" name="inputNome" class="inputConta" id="inputNome" placeholder="Nome" value = "<?php echo $c->get_nome();?>">  
+            <input type="hidden" name="inputCodigo" class="inputConta" id="inputCodigo" value = "<?php echo $c->get_codigo();?>"> 
+            <input type="date" name="inputNascimento" class="inputConta" id="inputNascimento" placeholder="Data de Nascimento" value = "<?php echo $c->get_data();?>"> 
+            <input type="text" name="inputCPF" class="inputConta" id="inputCPF" placeholder="CPF" value = "<?php echo $c->get_cpf();?>">
+            <input type="text" name="inputCEP" class="inputConta" id="inputCEP" placeholder="CEP" value = "<?php echo $c->get_cep();?>">
+            <input type="text" name="inputTelefone" class="inputConta" id="inputTelefone" placeholder="Telefone" value = "<?php echo $c->get_telefone();?>">
+            <input type="email" name="inputEmail" class="inputConta" id="inputEmail" placeholder="Email" value = "<?php echo $c->get_email();?>"> 
+            <input type="password" name="inputSenha" class="inputConta" id="inputSenha" placeholder="Senha" value="<?php echo $c->get_senha(); ?>">
         </form>
         <div id="buttons">
             <a href="statusDoPedido.php">Pedidos</a>
             <a href="logout.php">Logout</a>
         </div>
     </main>
+    <script src="scripts/conta.js"></script>
 </body>
 </html>
