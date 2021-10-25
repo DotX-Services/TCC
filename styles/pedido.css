@@ -49,6 +49,7 @@ div.traco {
 
 div img {
   width: 100px;
+  margin: 10px;
 }
 
 .tracoStatus {
@@ -69,6 +70,7 @@ main {
   display: flex;
   text-align: center;
   justify-content: center;
+  align-items: center;
 }
 
 table {
@@ -174,4 +176,33 @@ section {
 section a:hover {
   background-color: var(--color_houver);
   color: white;
+}
+
+@media only screen and (max-width: 845px){
+  nav a {
+    display: none;
+  }
+  #menu {
+    margin: 2em;
+    width: 60px;
+    display: block;
+  }
+  section {
+    flex-direction: column;
+  }
+  .etc {
+    margin-top: 10px;
+  }
+  main{
+    flex-direction: column;
+  }
+  .informacoes{
+    padding: 5px;
+  }
+  .pedido{
+    padding: 5px;
+  }
+  table{
+    width: auto;
+  }
 }

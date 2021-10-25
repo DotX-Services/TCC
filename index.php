@@ -69,7 +69,12 @@
         <div class="main_azul" id="mapa">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3674.99880168831!2d-47.06479938540024!3d-22.913415043867257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8c8cbdac3a855%3A0x703bc03d5ccb4085!2sDespachante%20Central!5e0!3m2!1spt-BR!2sbr!4v1633373107302!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             <h1 class="titulo">Onde nos encontrar</h1>
-            <p>Nossa loja fica em Campinas-SP, na Rua Sete de Setembro, 506 - Vila Industrial<br>CEP: 13035-350</p>
+            <ul>
+                <li>Campinas-SP</li>
+                <li>Rua Sete de Setembro, 506</li>
+                <li>Vila Industrial</li>
+                <li>CEP: 13035-350</li>
+            </ul>
         </div>
         <footer>
         <h2>Atendimento</h2>

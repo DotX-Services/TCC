@@ -49,6 +49,7 @@ header div.traco {
   height: 70px;
   border-radius: 5px;
   width: 50px;
+  margin-right: 20px;
 }
 
 div#usuario a {
@@ -153,6 +154,11 @@ body::-webkit-scrollbar-thumb {
 
 /*Responsividade*/
 @media only screen and (max-width: 845px) {
+  main,
+  ol,
+  main ul {
+    width: 100%;
+  }
   nav a {
     display: none;
   }

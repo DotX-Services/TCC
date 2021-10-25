@@ -48,6 +48,7 @@ header div.traco {
   height: 70px;
   border-radius: 5px;
   width: 50px;
+  margin-right: 20px;
 }
 
 div#usuario a {
@@ -123,6 +124,11 @@ div.main_azul img {
 
 #mapa {
   padding-bottom: 16em;
+}
+
+#mapa li{
+  margin-left: 50px;
+  font-size: 25px;
 }
 
 iframe {
@@ -215,5 +221,8 @@ body::-webkit-scrollbar-thumb {
   }
   .etc {
     margin-top: 10px;
+  }
+  img#chatbot{
+    width: 100px;
   }
 }
