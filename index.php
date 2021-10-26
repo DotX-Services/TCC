@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/2077a80796.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/chatbot.css">
     <title>Despachante Central - Home</title>
 </head>
 <body>
-    <a href="#"><img src="media/Chatbot.png" alt="chatbot" id="chatbot"></a>
+    <button type="button" class="chatLauncher" style="display:none;"></button>
+    <script src="scripts/chatbot.js"></script>
     <header>
         <a href="index.php"><img src="media/Despachante.png" alt="Foto Despachante" id="fotoDespachante"></a>
         <nav>
