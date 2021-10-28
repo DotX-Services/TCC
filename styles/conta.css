@@ -72,6 +72,7 @@ main {
 
 #fotoUsuario {
   border-radius: 50%;
+  width: 70%;
 }
 
 main button {

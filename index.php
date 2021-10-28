@@ -78,7 +78,8 @@
                 <li>CEP: 13035-350</li>
             </ul>
         </div>
-        <footer>
+    </main>
+    <footer>
         <h2>Atendimento</h2>
         <section>
             <ul class="contato">
@@ -94,6 +95,5 @@
             </ul>
         </section>
     </footer>
-    </main>
 </body>
 </html>

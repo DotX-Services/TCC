@@ -33,11 +33,10 @@
                     <i class="fas fa-bullhorn"></i>
                     <span>Fale conosco</span>
                 </a>
-                <img src="media/Menu.png" alt="teste" id="menu">
             </nav>
             <div class="traco"></div>
             <div id="usuario">
-                <img src="media/usuario.jpeg" alt="Foto usuário">
+                <img src="https://avatars.dicebear.com/api/initials/Guilherme.svg" alt="Foto usuário">
             </div>
         </header>
         <div class="tracoStatus"></div>

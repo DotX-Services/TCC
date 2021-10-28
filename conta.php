@@ -37,7 +37,7 @@
         </nav>
         <div class="traco"></div>
         <div id="usuario">
-            <img src="media/usuario.jpeg" alt="Foto usuário">
+            <img src="https://avatars.dicebear.com/api/initials/Guilherme.svg" alt="Foto usuário">
         </div>
     </header>
     <main>
@@ -50,7 +50,7 @@
         $c = $dao->obter($id);
         
         ?>
-        <img src="media/usuario.jpeg" alt="Foto do Usuário" id="fotoUsuario">
+        <img src="https://avatars.dicebear.com/api/initials/Guilherme.svg" alt="Foto do Usuário" id="fotoUsuario">
         <form action="alterar-informacoes.php" method="POST">
             <button type="submit" id="btnAlterar">Alterar informações</button><br>
             
