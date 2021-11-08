@@ -39,7 +39,7 @@ nav a {
   min-width: 845px;
 }
 
-#menu {
+.menu {
   display: none;
 }
 
@@ -211,7 +211,7 @@ body::-webkit-scrollbar-thumb {
   nav a {
     display: none;
   }
-  #menu {
+  .menu {
     margin: 2em;
     width: 60px;
     display: block;

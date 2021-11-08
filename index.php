@@ -29,7 +29,7 @@
                     <span>Fale conosco</span>
                 </a>
             </ul>
-            <img src="media/Menu.png" alt="teste" id="menu">
+            <input type="image" src="media/Menu.png" class="menu">
         </nav>
         <div class="traco"></div>
         <div id="usuario">
@@ -95,5 +95,6 @@
             </ul>
         </section>
     </footer>
+    <script src="scripts/script.js"></script>
 </body>
 </html>
