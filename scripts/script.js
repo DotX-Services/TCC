@@ -1,10 +1,17 @@
 const menu = document.querySelector('.menu');
-const header = document.querySelector('header');
 
-menu.addEventListener('click', function(e){
-    const servicos = document.createElement('a');
+menu.addEventListener('click', function (e) {
+    const servicos = document.getElementById('menuServ');
+    const menu = document.getElementById('menuEncon');
+    const fale = document.getElementById('menuFale');
 
-    header.appendChild(servicos);
-    servicos.href = '#servicos';
-    servicos.title = 'Nossos serviços'
+    if (servicos.style.display === 'block') {
+        servicos.style.display = 'none';
+        menu.style.display = 'none';
+        fale.style.display = 'none';
+    } else {
+        servicos.style.display = 'block';
+        menu.style.display = 'block';
+        fale.style.display = 'block';
+    }
 });

@@ -71,6 +71,23 @@ p#entrar {
   margin-bottom: 30px;
 }
 
+section{
+  display: none;
+}
+
+section a{
+  display: none;
+  font-family: var(--font_principal);
+  font-size: 21px;
+  text-align: center;
+  border: 1px solid black;
+  margin: 2px 0px;
+  padding: 8px;
+  color: black;
+  text-decoration: none;
+  transition: 2s;
+}
+
 main {
   font-family: var(--font_principal);
 }
