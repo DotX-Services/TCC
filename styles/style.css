@@ -48,10 +48,14 @@ header div.traco {
   height: 70px;
   border-radius: 5px;
   width: 50px;
-  margin-right: 20px;
+  margin-right: -7px;
 }
 
-div#usuario a {
+#usuario{
+  display: flex;
+}
+
+#usuario a {
   padding: 10px 20px;
   color: var(--cor_letras);
   background-color: rgb(56, 182, 255);
@@ -62,20 +66,16 @@ div#usuario a {
   text-decoration: none;
 }
 
-header div#usuario p {
-  flex: 2;
-  margin-right: 30px;
+#usuario p {
+  flex: 1;
+  margin-right: 20px;
 }
 
-p#entrar {
-  margin-bottom: 30px;
-}
-
-section{
+#menuResponsivo{
   display: none;
 }
 
-section a{
+#menuResponsivo a{
   display: none;
   font-family: var(--font_principal);
   font-size: 21px;
@@ -183,7 +183,7 @@ footer ul {
 
 li {
   font-size: 18px;
-  /*Centralizar as letras*/
+  margin-bottom: 4px;
 }
 
 li a {
@@ -200,6 +200,7 @@ ul.contato i {
 }
 
 section {
+  font-family: var(--font_principal);
   display: flex;
 }
 
@@ -225,6 +226,14 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media only screen and (max-width: 845px) {
+  #usuario{
+    flex-direction: column;
+  }
+
+  #entrar{
+    margin-bottom: 30px;
+  }
+  
   nav a {
     display: none;
   }

@@ -36,10 +36,10 @@
         <div class="traco"></div>
         <div id="usuario">
             <p id="entrar"><a href="entrar.php">Entrar</a></p>
-            <p class="Abaixo"><a href="registrar.php">Cadastrar</a></p>
+            <p id="registrar"><a href="registrar.php">Cadastrar</a></p>
         </div>
     </header>
-    <section>
+    <nav id="menuResponsivo">
         <a href="#" id="menuServ">
             <i class="fas fa-car-side"></i>
             <span>Nossos Serviços</span>
@@ -52,7 +52,7 @@
             <i class="fas fa-bullhorn"></i>
             <span>Fale conosco</span>
         </a>
-    </section>
+    </nav>
     <main>
         <div class="main_branca">
             <img src="./media/loja.png" alt="Teste">
