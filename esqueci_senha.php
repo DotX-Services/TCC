@@ -1,13 +1,13 @@
 <?php
 
-    require_once('clienteDAO.php');
+    require_once('model/clienteDAO.php');
     ob_start();
 
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception;
 
-    require '../lib/vendor/autoload.php';
+    require 'lib/phpmailer/vendor/autoload.php';
     $mail = new PHPMailer(true);
     
 ?>
@@ -17,10 +17,11 @@
     <head>
         <meta charset="UTF-8">
         <title>Esqueci minha senha</title>
-        <link rel="stylesheet" href="../styles/esqueci_senha.css">
+        <link rel="stylesheet" href="styles/esqueci_senha.css">
+        <link rel="shortcut icon" type="imagex/png" href="media/favicon.ico">
     </head>
     <header>
-        <div id="img-logo"><img src="../media/Despachante.png" alt="" width="150px" height="150px"></div>
+        <div id="img-logo"><img src="media/Despachante.png" alt="" width="150px" height="150px"></div>
     </header>
     <body class = "conteiner">
         <h1>Esqueci minha senha</h1>

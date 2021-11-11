@@ -19,11 +19,7 @@
 <h2><center>Alterar Cliente</center></h2>
 <form class = "container" action="../controller/AlterarCliente.php" method="POST">
   <div class="form-group">
-    <label for="lbl_codigo_cli" for="email">Código do Cliente:</label>
-    <input readonly type="text" class="form-control" id="lbl_codigo_cli" name="lbl_codigo_cli" value = "<?php echo $c->get_codigo();?>">
-  </div>
-  <div class="form-group">
-    <label for="lbl_codigo_ser" for="email">Código do Serviço:</label>
+    <label for="lbl_codigo_ser" for="email">Código do Pedido:</label>
     <input type="text" class="form-control" id="lbl_codigo_ser" name="lbl_codigo_ser" value = "<?php echo $c->get_nome();?>">
   </div>
   <div class="form-group">

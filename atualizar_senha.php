@@ -1,7 +1,7 @@
 <?php
 
-    require_once('../bd/config.php');
-    require_once('clienteDAO.php');
+    require_once('bd/config.php');
+    require_once('model/clienteDAO.php');
     ob_start();
 
 ?>
@@ -11,10 +11,11 @@
     <head>
         <meta charset="UTF-8">
         <title>Atualizar Senha</title>
-        <link rel="stylesheet" href="../styles/atualizar_senha.css">
+        <link rel="stylesheet" href="styles/atualizar_senha.css">
+        <link rel="shortcut icon" type="imagex/png" href="media/favicon.ico">
     </head>
     <header>
-        <div id="img-logo"><img src="../media/Despachante.png" alt="" width="150px" height="150px"></div>
+        <div id="img-logo"><img src="media/Despachante.png" alt="" width="150px" height="150px"></div>
     </header>
     <body class = "conteiner">
         <h1>Atualizar senha</h1>
@@ -35,6 +36,6 @@
 
             <button type="submit" value="Atualizar" name="SendNovaSenha">Atualizar</button>
         </form>
-        Lembrou a senha? <a href="/TCC/entrar.php">clique aqui para logar</a> 
+        Lembrou a senha? <a href="entrar.php">clique aqui para logar</a> 
     </body>
 </html>

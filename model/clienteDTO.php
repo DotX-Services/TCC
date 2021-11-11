@@ -1,6 +1,6 @@
 <?php
 
-	require_once('C:\xampp\htdocs\TCC\php\clienteDAO.php');
+	require_once('clienteDAO.php');
 	require_once('C:\xampp\htdocs\TCC\utils\validacoes.php');
 
 	class ClienteDTO{
@@ -20,8 +20,8 @@
 		}
 
 		function set_codigo($value){
-			if($value==null){
-				throw new Exception("Campo vazio!");
+			if($value==null or empty($value)){
+				throw new Exception("Campo codigo vazio!");
 			}
 			$this->codigo = $value;
 		}

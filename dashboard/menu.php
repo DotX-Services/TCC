@@ -43,8 +43,8 @@
             Pedidos
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Status</a>
-            <a class="dropdown-item" href="#">Editar</a>
+            <a class="dropdown-item" href="/TCC/dashboard/view/viewConsultarServico.php">Status</a>
+            <a class="dropdown-item" href="/TCC/dashboard/view/viewAlterarServico.php">Editar</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Outros</a>

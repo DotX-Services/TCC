@@ -219,6 +219,19 @@
             return $lista;
         }
 
+        function obter_nome($codigo){
+            $sql = $this->con->query("SELECT nome FROM clientes where codigo = ". $codigo ." ");
+            $nome = $sql->fetch(PDO::FETCH_ASSOC);
+            return $nome;
+        }
+
+        function obter_email($codigo){
+            $sql = $this->con->query("SELECT email FROM clientes where codigo = ". $codigo ." ");
+            $email = $sql->fetch(PDO::FETCH_ASSOC);
+            return $email;
+        }
+
+
     
     }
 

@@ -1,7 +1,7 @@
 <?php
-	require_once('php/clienteDAO.php');
-	require_once('utils/Messages.php');
-	require_once('utils/anti-csrf.php');
+	require_once('../model/clienteDAO.php');
+	require_once('../utils/Messages.php');
+	require_once('../utils/anti-csrf.php');
 
 	$dao = new ClienteDAO();
 	$dto = new ClienteDTO();
@@ -23,11 +23,11 @@
 		}
 	
 		if($dao->alterar($dto)){
-			header("Location: conta.php");
+			header("Location: ../conta.php");
 			Messages::sucesso_conta("Informações alterado com sucesso!");
 		}
 		else{
-			header("Location: conta.php");
+			header("Location: ../conta.php");
 			Messages::erro_conta("Erro ao alterar as informações");
 		}
 	//}
