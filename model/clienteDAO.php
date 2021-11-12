@@ -74,8 +74,8 @@
                             $mail->isSMTP();                                            
                             $mail->Host       = 'smtp.gmail.com';                     
                             $mail->SMTPAuth   = true;                                   
-                            $mail->Username   = 'dotxservicestcc';                     
-                            $mail->Password   = 'bq@2021#@';                               
+                            $mail->Username   = 'YOUR_USERNAME';                     
+                            $mail->Password   = 'YOUR_PASSWORD';                               
                             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;            
                             $mail->Port       = 587;
                             
