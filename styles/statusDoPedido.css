@@ -65,7 +65,36 @@ div img{
     text-align: center;
 }
 
+#semPedido{
+    text-align: center;
+    font-family: var(--font_principal);
+    font-size: 40px;
+    width: 45%;
+    padding: 20px;
+    border: 2px solid black;
+    margin: 133px auto;
+}
+
+#semPedido a{
+    font-family: var(--font_principal);
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: var(--color_secundaria);
+    padding: 7px;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+#semPedido a:hover{
+    background-color: white;
+    border: 1px solid var(--color_secundaria);
+    color: var(--color_secundaria);
+}
+
 table{
+    display: none;
     text-align: center;
     margin: 10px auto;
     width: 800px;
@@ -91,6 +120,7 @@ td{
 }
 
 #a{
+    display: none;
     text-align: center;
     margin: 20px 0px;
 }

@@ -9,6 +9,7 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,6 +19,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles/statusDoPedido.css">
 </head>
+
 <body>
     <div class="cotainer">
         <header class="textoPrincipal">
@@ -49,6 +51,11 @@
             <h1>Status do pedido</h1>
         </div>
         <main>
+            <div id="semPedido">
+                <p>Você não tem nenhum pedido!<br>
+                    <a href="pedido.php">Clique aqui </a>para criar um novo pedido.
+                </p>
+            </div>
             <table>
                 <tr>
                     <th>Emplacamento de carro</th>
@@ -97,24 +104,25 @@
             </div>
         </main>
         <footer>
-        <h2>Atendimento</h2>
-        <section>
-            <ul class="contato">
-                <li><i class="fas fa-phone-alt"></i><span>(19) 3272-7655</span></li>
-                <li><i class="fab fa-whatsapp"></i><a href="http://api.whatsapp.com/send?phone=5519991560933">Whatsapp</a></li>
-                <li><i class="far fa-envelope"></i><span>Despachante@despachante.com</span></li>
-            </ul>
-            <ul class="etc">
-                <li><a href="#">Formas de pagamento</a></li>
-                <li><a href="#">Serviços</a></li>
-                <li><a href="termosDeUso.php">Termos de uso</a></li>
-                <li><a href="politicaDePrivacidade.php">Política de privacidade</a></li>
-            </ul>
-        </section>
-    </footer>
-</div>
+            <h2>Atendimento</h2>
+            <section>
+                <ul class="contato">
+                    <li><i class="fas fa-phone-alt"></i><span>(19) 3272-7655</span></li>
+                    <li><i class="fab fa-whatsapp"></i><a
+                            href="http://api.whatsapp.com/send?phone=5519991560933">Whatsapp</a></li>
+                    <li><i class="far fa-envelope"></i><span>Despachante@despachante.com</span></li>
+                </ul>
+                <ul class="etc">
+                    <li><a href="#">Formas de pagamento</a></li>
+                    <li><a href="#">Serviços</a></li>
+                    <li><a href="termosDeUso.php">Termos de uso</a></li>
+                    <li><a href="politicaDePrivacidade.php">Política de privacidade</a></li>
+                </ul>
+            </section>
+        </footer>
     </div>
-   
+    </div>
+
 </body>
 
 
