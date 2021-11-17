@@ -39,7 +39,7 @@
             <p id="registrar"><a href="registrar.php">Cadastrar</a></p>
         </div>
     </header>
-    <nav id="menuResponsivo">
+    <section id="menuResponsivo">
         <a href="#" id="menuServ">
             <i class="fas fa-car-side"></i>
             <span>Nossos Serviços</span>
@@ -52,7 +52,7 @@
             <i class="fas fa-bullhorn"></i>
             <span>Fale conosco</span>
         </a>
-    </nav>
+    </section>
     <main>
         <div class="main_branca">
             <img src="./media/loja.png" alt="Teste">
