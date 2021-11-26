@@ -15,8 +15,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fazer pedido</title>
     <link rel="stylesheet" href="styles/pedido.css">
-    <link rel="stylesheet" href="styles/footer.css">
     <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/footer.css">
     <link rel="shortcut icon" type="imagex/png" href="media/favicon.ico">
     <script src="https://kit.fontawesome.com/2077a80796.js" crossorigin="anonymous"></script>
 </head>
@@ -44,13 +44,28 @@
                 <i class="fas fa-bullhorn"></i>
                 <span>Fale conosco</span>
             </a>
-            <img src="media/Menu.png" alt="teste" id="menu">
+            <input type="image" src="media/Menu.png" class="menu">
         </nav>
         <div class="traco"></div>
         <div>
             <a href="conta.php"><img src="https://avatars.dicebear.com/api/initials/<?php echo $c->get_nome().'.svg';?>" alt="Foto usuário" id="fotoUsuario"></a>
         </div>
     </header>
+    <section id="menuResponsivo">
+                <a href="#" id="menuServ">
+                    <i class="fas fa-car-side"></i>
+                    <span>Nossos Serviços</span>
+                </a>
+                <a href="#" id="menuEncon">
+                    <i class="fas fa-map-marked"></i>
+                    <span>Onde nos encontrar</span>
+                </a>
+                <a href="#" id="menuFale">
+                    <i class="fas fa-bullhorn"></i>
+                    <span>Fale conosco</span>
+                </a>
+            </section>
+            <script src="scripts/script.js"></script>
     <div class="tracoStatus"></div>
     <div class="titulo">
         <h1>Pedido</h1>
@@ -90,7 +105,6 @@
                     <tr><td><label for="placa">Placa do carro: </label><input type="text" id="placa" name="placa"></td></tr>
                     <tr><td><p></p></td></tr>
                     <tr><td><p><button type="submit" class="btnInfo">Fazer pedido</button></p></td></tr>
-                    <tr><td><label>Caso esteja fazendo seu primeiro emplacamento, deixe o campo de placa do carro em branco!</label></td></tr>
                 </TBODY>
             </table>
         </form>

@@ -14,6 +14,7 @@
   padding: 0px;
   margin: 0px;
 }
+
 body {
   background-color: var(--color_background);
   font-family: var(--font_principal);
@@ -42,15 +43,29 @@ nav a {
   min-width: 845px;
 }
 
-#menu {
+header input{
+  width: 60px;
   display: none;
+}
+
+#menuResponsivo a{
+  display: none;
+  font-family: var(--font_principal);
+  font-size: 21px;
+  text-align: center;
+  border: 1px solid black;
+  margin: 2px 0px;
+  padding: 8px;
+  color: black;
+  text-decoration: none;
 }
 
 div.traco {
   border-left: 6px solid rgb(0, 0, 0);
   height: 70px;
   border-radius: 5px;
-  width: 50px;
+  width: 25px;
+  margin-left: 10px;
 }
 
 div img {
@@ -68,10 +83,12 @@ main {
   padding: 40px 60px;
   border-radius: 15px;
   box-shadow: 1px 1px 12px 1px rgba(0, 0, 0, 0.1);
+  align-items: center;
 }
 
-#fotoUsuario {
+main #fotoUsuario {
   border-radius: 50%;
+  width: 300px;
 }
 
 main button {
@@ -134,4 +151,36 @@ form input:focus {
   background-color: white;
   border: 1px solid var(--color_secundaria);
   color: var(--color_secundaria);
+}
+
+
+@media only screen and (max-width: 845px) {
+  header input{
+    display: block;
+  }
+
+  
+  main{
+    width: 200px;
+  }
+
+  main #fotoUsuario{
+    width: 200px;
+  }
+  
+  nav a {
+    display: none;
+  }
+
+  #buttons{
+    margin-left: -30px;
+  }
+
+  form{
+    margin-left: -30px;
+  }
+
+  #servicos img{
+    width: 400px;
+  }
 }

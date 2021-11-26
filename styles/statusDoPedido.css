@@ -14,6 +14,44 @@
     margin: 0px;
 }
 
+header{
+    background-color: var(--color_secundaria);
+    font-family: var(--font_principal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 3px;
+}
+
+#fotoDespachante{
+    width: 120px;
+}
+
+#fotoUsuario {
+    border-radius: 50%;
+}
+
+nav a{
+    color: rgb(0, 0, 0);
+    font-family: var(--font_principal);
+    font-size: 25px;
+    text-decoration: none;
+    margin: 20px;
+    min-width: 845px;
+}
+
+#menu{
+    display: none;
+}
+
+div.traco {
+    border-left: 6px solid rgb(0, 0, 0);
+    height: 70px;
+    border-radius: 5px;
+    width: 25px;
+    margin-left: 10px;
+  }
+
 div img{
     width: 100px;
 }
@@ -39,7 +77,7 @@ div img{
     width: 45%;
     padding: 20px;
     border: 2px solid black;
-    margin: 135.5px auto;
+    margin: 134px auto;
 }
 
 #semPedido a{
@@ -61,7 +99,6 @@ div img{
 }
 
 table{
-    display: none;
     text-align: center;
     margin: 10px auto;
     width: 800px;
@@ -87,7 +124,6 @@ td{
 }
 
 #a{
-    display: none;
     text-align: center;
     margin: 20px 0px;
 }
@@ -108,10 +144,6 @@ td{
     background-color: white;
     border: 1px solid var(--color_secundaria);
     color: var(--color_secundaria);
-}
-
-footer{
-    margin-top: 60px;
 }
 
 @media only screen and (max-width: 845px) {

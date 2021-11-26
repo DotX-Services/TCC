@@ -22,8 +22,8 @@
         <title>Status do pedido</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="styles/statusDoPedido.css">
-        <link rel="stylesheet" href="styles/footer.css">
         <link rel="stylesheet" href="styles/header.css">
+        <link rel="stylesheet" href="styles/footer.css">
         <link rel="shortcut icon" type="imagex/png" href="media/favicon.ico">
     </head>
     <body>
@@ -31,12 +31,6 @@
             $id = $_SESSION['idUser'];
             $dao = new ClienteDAO();
             $c = $dao->obter($id);
-
-            if(isset($_GET['status'])){
-                if($_GET['status'] == 'failure'){
-                    //pagamento falhou
-                }
-            }
         ?>
         <div class="cotainer">
             <header class="textoPrincipal">
@@ -54,13 +48,28 @@
                         <i class="fas fa-bullhorn"></i>
                         <span>Fale conosco</span>
                     </a>
-                    <img src="media/Menu.png" alt="teste" id="menu">
+                    <input type="image" src="media/Menu.png" class="menu">
                 </nav>
                 <div class="traco"></div>
                 <div>
                     <a href="conta.php"><img src="https://avatars.dicebear.com/api/initials/<?php echo $c->get_nome().'.svg';?>" alt="Foto usuário" href="conta.php" id="fotoUsuario"></a>
                 </div>
             </header>
+            <section id="menuResponsivo">
+                <a href="#" id="menuServ">
+                    <i class="fas fa-car-side"></i>
+                    <span>Nossos Serviços</span>
+                </a>
+                <a href="#" id="menuEncon">
+                    <i class="fas fa-map-marked"></i>
+                    <span>Onde nos encontrar</span>
+                </a>
+                <a href="#" id="menuFale">
+                    <i class="fas fa-bullhorn"></i>
+                    <span>Fale conosco</span>
+                </a>
+            </section>
+            <script src="scripts/script.js"></script>
 
             <div class="tracoStatus"></div>
 

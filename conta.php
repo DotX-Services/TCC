@@ -15,6 +15,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conta</title>
     <link rel="stylesheet" href="styles/conta.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/footer.css">
     <link rel="shortcut icon" type="imagex/png" href="media/favicon.ico">
     <script src="https://kit.fontawesome.com/2077a80796.js" crossorigin="anonymous"></script>
 </head>
@@ -43,13 +45,28 @@
                 <i class="fas fa-bullhorn"></i>
                 <span>Fale conosco</span>
             </a>
-            <img src="media/Menu.png" alt="teste" id="menu">
+            <input type="image" src="media/Menu.png" class="menu">
         </nav>
         <div class="traco"></div>
         <div id="usuario">
             <img src="https://avatars.dicebear.com/api/initials/<?php echo $c->get_nome().'.svg';?>" alt="Foto usuário" id="fotoUsuario">
         </div>
     </header>
+    <section id="menuResponsivo">
+        <a href="#" id="menuServ">
+            <i class="fas fa-car-side"></i>
+            <span>Nossos Serviços</span>
+        </a>
+        <a href="#" id="menuEncon">
+            <i class="fas fa-map-marked"></i>
+            <span>Onde nos encontrar</span>
+        </a>
+        <a href="#" id="menuFale">
+            <i class="fas fa-bullhorn"></i>
+            <span>Fale conosco</span>
+        </a>
+    </section>
+    <script src="scripts/script.js"></script>
     <main>
         <img src="https://avatars.dicebear.com/api/initials/<?php echo $c->get_nome().'.svg';?>" alt="Foto do Usuário" id="fotoUsuario">
         <form action="controller/alterar-informacoes.php" method="POST">
@@ -61,8 +78,8 @@
             <input type="text" name="inputCPF" id="inputCPF" placeholder="CPF" value = "<?php echo $c->get_cpf();?>">
             <input type="text" name="inputCEP" id="inputCEP" placeholder="CEP" value = "<?php echo $c->get_cep();?>">
             <input type="text" name="inputTelefone" id="inputTelefone" placeholder="Telefone" value = "<?php echo $c->get_telefone();?>">
-            <input type="email" name="inputEmail" id="inputEmail" placeholder="Email" value = "<?php echo $c->get_email();?>">
-            <input type="hidden" name="session" id="session"value = "<?php echo $id; ?>">
+            <input type="email" name="inputEmail" id="inputEmail" placeholder="Email" value = "<?php echo $c->get_email();?>"> 
+            <input type="hidden" name="inputSenha" id="inputSenha" placeholder="Senha" value="<?php echo $c->get_senha(); ?>">
         </form>
         <div id="buttons">
             <a href="statusDoPedido.php">Pedidos</a>
