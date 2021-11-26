@@ -35,8 +35,8 @@
                             echo '<a href="conta.php"><img src="https://avatars.dicebear.com/api/initials/'. $nome .'" alt="Foto usuário" style="border-radius: 50%; width: 100px"></a>';
                         }else{
                             echo '<div id="usuario">
-                                    <p class="entrar"><a href="entrar.php" class="entrar">Entrar</a></p>
-                                    <p class="Abaixo"><a href="registrar.php">Cadastrar</a></p>
+                                    <p id="entrar"><a href="entrar.php">Entrar</a></p>
+                                    <p><a href="registrar.php" id="cadastro">Cadastrar</a></p>
                                   </div>';
                             session_destroy();
                         }
@@ -44,18 +44,18 @@
     </div>
 </header>
 <section id="menuResponsivo">
-        <a href="#" id="menuServ">
-            <i class="fas fa-car-side"></i>
-            <span>Nossos Serviços</span>
-        </a>
-        <a href="#" id="menuEncon">
-            <i class="fas fa-map-marked"></i>
-            <span>Onde nos encontrar</span>
-        </a>
-        <a href="#" id="menuFale">
-            <i class="fas fa-bullhorn"></i>
-            <span>Fale conosco</span>
-        </a>
-    </section>
+    <a href="#" id="menuServ">
+        <i class="fas fa-car-side"></i>
+        <span>Nossos Serviços</span>
+    </a>
+    <a href="#" id="menuEncon">
+        <i class="fas fa-map-marked"></i>
+        <span>Onde nos encontrar</span>
+    </a>
+    <a href="#" id="menuFale">
+        <i class="fas fa-bullhorn"></i>
+        <span>Fale conosco</span>
+    </a>
+</section>
 <script src="scripts/script.js"></script>
 
