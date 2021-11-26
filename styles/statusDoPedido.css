@@ -61,6 +61,7 @@ div img{
 }
 
 table{
+    display: none;
     text-align: center;
     margin: 10px auto;
     width: 800px;
@@ -86,6 +87,7 @@ td{
 }
 
 #a{
+    display: none;
     text-align: center;
     margin: 20px 0px;
 }
