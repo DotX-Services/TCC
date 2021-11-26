@@ -1,18 +1,22 @@
 <?php
-	require_once('../../php/clienteDAO.php');
-    require_once('../../php/clienteDTO.php');
+	require_once('../../model/clienteDAO.php');
+    require_once('../../model/clienteDTO.php');
 
 	include('../menu.php');
 
+	
 	$dao = new ClienteDAO();
 
 	if(!isset($_GET['nome'])){
 		$clientes = $dao->obter_todos();	
 	}
 	else{
-		$clientes = $dao->obter_por_nome($_GET['nome']);
+		$clientes = $dao->obter_por_nome(strip_tags($_GET['nome']));
 	}
-	
+	if(isset($_GET['codigo'])){
+		$clientes = $dao->obter_por_codigo(strip_tags($_GET['codigo']));
+	}
+
 ?>
 
 	<h2><center>Clientes Cadastrados</center></h2>
@@ -40,7 +44,7 @@
 		echo "<td>" . $c->get_email() . "</td>";
 		echo "<td>" . $c->get_data() . "</td>";
 		echo "<td><a href = '../controller/ExcluirCliente.php?codigo=" . $c->get_codigo() . "'>Excluir</a></td>";
-		echo "<td><a href = '../view/viewAlterarCliente.php?codigo=" . $c->get_codigo() . "'>Alterar</a></td>";
+		echo "<td><a href = 'viewAlterarCliente.php?codigo=" . $c->get_codigo() . "'>Alterar</a></td>";
 	}
 ?>
 			

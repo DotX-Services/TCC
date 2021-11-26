@@ -34,7 +34,7 @@ header {
 }
 
 nav a {
-  color: white;
+  color: rgb(0, 0, 0);
   font-family: var(--font_principal);
   font-size: 25px;
   text-decoration: none;
@@ -47,7 +47,7 @@ nav a {
 }
 
 div.traco {
-  border-left: 6px solid rgb(255, 255, 255);
+  border-left: 6px solid rgb(0, 0, 0);
   height: 70px;
   border-radius: 5px;
   width: 50px;
@@ -72,7 +72,6 @@ main {
 
 #fotoUsuario {
   border-radius: 50%;
-  width: 70%;
 }
 
 main button {

@@ -5,37 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/2077a80796.js" crossorigin="anonymous"></script>
-    <title>Status do Pedido</title>
+    <title>Termos de Uso</title>
     <link rel="stylesheet" href="styles/politicas.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="shortcut icon" type="imagex/png" href="media/favicon.ico">
 </head>
 <body>
-    <a href="#"><img src="media/Chatbot.png" alt="chatbot" id="chatbot"></a>
-    <header>
-        <a href="index.php"><img src="media/Despachante.png" alt="Foto Despachante" id="fotoDespachante"></a>
-        <nav>
-            <ul>
-                <a href="#">
-                    <i class="fas fa-car-side"></i>
-                    <span>Nosso Serviço</span>
-                </a>
-                <a href="#">
-                    <i class="fas fa-map-marked"></i>
-                    <span>Onde nos encontrar</span>
-                </a>
-                <a href="#">
-                    <i class="fas fa-bullhorn"></i>
-                    <span>Fale conosco</span>
-                </a>
-            </ul>
-            <img src="media/Menu.png" alt="teste" id="menu">
-        </nav>
-        <div class="traco"></div>
-        <div id="usuario">
-            <p id="entrar"><a href="entrar.php">Entrar</a></p>
-            <p class="Abaixo"><a href="registrar.php">Cadastrar</a></p>
-        </div>
-    </header>
-
+    <?php include('includes/header.php'); ?>
     <main>
         <h1>Termos de uso</h1>
         <h2>1. Termos</h2> <p>Ao acessar ao site <a href='http://despachantecentral-campinas.com.br'>Despachante Central</a>, concorda em cumprir estes termos de serviço, todas as leis e regulamentos aplicáveis ​​e concorda que é responsável pelo cumprimento de todas as leis locais aplicáveis. Se você não concordar com algum desses termos, está proibido de usar ou acessar este site. Os materiais contidos neste site são protegidos pelas leis de direitos autorais e marcas comerciais aplicáveis.</p> 
@@ -65,22 +42,10 @@
         <h3>Lei aplicável</h3> 
         <p>Estes termos e condições são regidos e interpretados de acordo com as leis do Despachante Central e você se submete irrevogavelmente à jurisdição exclusiva dos tribunais naquele estado ou localidade.</p>
     </main>
-
-    <footer>
-        <h2>Atendimento</h2>
-        <section>
-            <ul class="contato">
-                <li><i class="fas fa-phone-alt"></i><span>(19) 3272-7655</span></li>
-                <li><i class="fab fa-whatsapp"></i><a href="http://api.whatsapp.com/send?phone=5519991560933">Whatsapp</a></li>
-                <li><i class="far fa-envelope"></i><span>Despachante@despachante.com</span></li>
-            </ul>
-            <ul class="etc">
-                <li><a href="#">Formas de pagamento</a></li>
-                <li><a href="#">Serviços</a></li>
-                <li><a href="termosDeUso.php">Termos de uso</a></li>
-                <li><a href="politicaDePrivacidade.php">Política de privacidade</a></li>
-            </ul>
-        </section>
-    </footer>
+    <?php include('includes/footer.php'); ?>
+    <div id="chatbot">
+        <button type="button" class="chatLauncher" style="display:none;"></button>
+        <script src="scripts/chatbot.js"></script>
+    </div>
 </body>
 </html>

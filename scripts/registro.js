@@ -9,9 +9,3 @@ new Cleave('#inputCEP', {
     delimiters: ['-'],
     numericOnly: true
 });
-
-new Cleave('#inputTelefone', {
-    blocks: [0, 2, 5, 4],
-    delimiters: ['(' ,') ', ' '],
-    numericOnly: true
-});

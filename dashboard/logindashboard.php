@@ -1,6 +1,6 @@
 <?php
 
-    require_once('../php/clienteDAO.php');
+    require_once('../model/clienteDAO.php');
     require_once('../utils/anti-csrf.php');
 
     if(isset($_POST['inputUser']) && !empty($_POST['inputUser']) && isset($_POST['inputSenha']) && !empty($_POST['inputSenha'])){

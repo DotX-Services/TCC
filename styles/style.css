@@ -6,7 +6,7 @@
   --color_secundaria: rgb(0, 154, 228);
   --color_houver: rgb(3, 116, 182);
   --font_principal: "Atkinson Hyperlegible", sans-serif;
-  --cor_letras: white;
+  --cor_letras: black;
   --max_width: 1200px;
   --min_width: 400px;
   --imagem_tamanho: 400px;
@@ -16,76 +16,6 @@
 * {
   padding: 0px;
   margin: 0px;
-}
-
-header {
-  background-color: var(--color_secundaria);
-  font-family: var(--font_principal);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-header img {
-  width: 120px;
-}
-
-nav a {
-  color: var(--cor_letras);
-  font-family: var(--font_principal);
-  font-size: 25px;
-  text-decoration: none;
-  margin: 20px;
-  min-width: 845px;
-}
-
-.menu {
-  display: none;
-}
-
-header div.traco {
-  border-left: 6px solid rgb(255, 255, 255);
-  height: 70px;
-  border-radius: 5px;
-  width: 50px;
-  margin-right: -7px;
-}
-
-#usuario{
-  display: flex;
-}
-
-#usuario a {
-  padding: 10px 20px;
-  color: var(--cor_letras);
-  background-color: rgb(56, 182, 255);
-  border: 2px solid white;
-  border-radius: 10px;
-  font-family: var(--font_principal);
-  font-size: 20px;
-  text-decoration: none;
-}
-
-#usuario p {
-  flex: 1;
-  margin-right: 20px;
-}
-
-#menuResponsivo{
-  display: none;
-}
-
-#menuResponsivo a{
-  display: none;
-  font-family: var(--font_principal);
-  font-size: 21px;
-  text-align: center;
-  border: 1px solid black;
-  margin: 2px 0px;
-  padding: 8px;
-  color: black;
-  text-decoration: none;
-  transition: 2s;
 }
 
 main {
@@ -150,8 +80,8 @@ div.main_azul img {
 
 iframe {
   float: right;
-  width: var(--imagem_tamanho);
-  height: 400px;
+  width: 550px;
+  height: 470px;
   margin-left: 10px;
   margin-right: 10px;
 }
@@ -171,6 +101,7 @@ img#chatbot {
 }
 
 footer {
+  font-family: var(--font_principal);
   background-color: var(--color_principal);
   padding-left: 25px;
   padding-top: 10px;
@@ -200,7 +131,6 @@ ul.contato i {
 }
 
 section {
-  font-family: var(--font_principal);
   display: flex;
 }
 
@@ -210,6 +140,7 @@ section {
 
 .etc {
   flex: 1;
+  margin-bottom: 3px;
 }
 
 section a:hover {

@@ -14,44 +14,6 @@
   margin: 0px;
 }
 
-header {
-  background-color: var(--color_secundaria);
-  font-family: var(--font_principal);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 3px;
-}
-
-#fotoDespachante {
-  width: 120px;
-}
-
-nav a {
-  color: white;
-  font-family: var(--font_principal);
-  font-size: 25px;
-  text-decoration: none;
-  margin: 20px;
-  min-width: 845px;
-}
-
-#menu {
-  display: none;
-}
-
-div.traco {
-  border-left: 6px solid rgb(255, 255, 255);
-  height: 70px;
-  border-radius: 5px;
-  width: 50px;
-}
-
-div img {
-  width: 100px;
-  margin: 10px;
-}
-
 .tracoStatus {
   border-left: 6px solid rgb(255, 255, 255);
   height: 7px;
@@ -59,7 +21,7 @@ div img {
 }
 
 .titulo {
-  color: white;
+  color: rgb(0, 0, 0);
   background-color: var(--color_secundaria);
   font-size: 30px;
   font-family: var(--font_principal);
@@ -70,7 +32,6 @@ main {
   display: flex;
   text-align: center;
   justify-content: center;
-  align-items: center;
 }
 
 table {
@@ -78,10 +39,10 @@ table {
   font-family: var(--font_principal);
   font-size: 20px;
   padding: 10px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 20px auto;
   margin-left: 20px;
-  width: 500px;
+  min-width: 370px;
+  max-width: 500px;
   border-spacing: 0px 7px;
   border-radius: 15px;
   box-shadow: 1px 1px 12px 1px rgba(0, 0, 0, 0.1);
@@ -132,77 +93,13 @@ main td {
   font-size: 20px;
 }
 
-footer {
-  background-color: var(--color_principal);
-  padding-left: 25px;
-  padding-top: 10px;
-  font-family: var(--font_principal);
+footer{
+  margin-top: 38px;
 }
 
-footer ul {
-  list-style: none;
-}
 
-li {
-  font-size: 18px;
-  /*Centralizar as letras*/
-}
-
-li a {
-  text-decoration: none;
-  color: black;
-  padding: 3px;
-  border-radius: 5px;
-  transition: 0.25s;
-}
-
-ul.contato i {
-  padding-right: 5px;
-  font-size: 25px;
-}
-
-section {
-  display: flex;
-}
-
-.contato {
-  flex: 1;
-}
-
-.etc {
-  flex: 1;
-}
-
-section a:hover {
-  background-color: var(--color_houver);
-  color: white;
-}
-
-@media only screen and (max-width: 845px){
-  nav a {
-    display: none;
-  }
-  #menu {
-    margin: 2em;
-    width: 60px;
-    display: block;
-  }
-  section {
-    flex-direction: column;
-  }
-  .etc {
-    margin-top: 10px;
-  }
+@media only screen and (max-width: 845px) {
   main{
     flex-direction: column;
-  }
-  .informacoes{
-    padding: 5px;
-  }
-  .pedido{
-    padding: 5px;
-  }
-  table{
-    width: auto;
   }
 }

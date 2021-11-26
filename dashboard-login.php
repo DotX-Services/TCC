@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="styles/login.css">
+    <link rel="shortcut icon" type="imagex/png" href="media/favicon.ico">
     <script src="https://kit.fontawesome.com/dd3dc7dddf.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
 </head>

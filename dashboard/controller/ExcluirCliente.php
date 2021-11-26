@@ -1,6 +1,6 @@
 <?php
 
-    require_once('../../php/clienteDAO.php');
+    require_once('../../model/clienteDAO.php');
     require_once('../../utils/Messages.php');
 
     $codigo = $_GET['codigo'];

@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Criar Conta Teste </title>
     <link rel="stylesheet" href="styles/registrar.css">
+    <link rel="shortcut icon" type="imagex/png" href="media/favicon.ico">
     <script src="https://kit.fontawesome.com/dd3dc7dddf.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
 
@@ -19,7 +20,7 @@
 <body>
     <div class="conteiner">
         <h1 class="textoPrincipal">Crie sua Conta</h1>
-        <form action="php/cadastro.php" method="POST" class="criarConta">
+        <form action="controller/cadastro.php" method="POST" class="criarConta">
             <input type="hidden" name="csrf_token" value="<?php echo createToken(); ?>">
             <main>
                 <div class="conteudo-Geral">

@@ -1,5 +1,29 @@
 <?php 
 
+    function errCadastro($e){
+        echo '<script type="text/javascript">alert("'. $e .'"); window.location.href="../registrar.php";</script>';
+    }
+
+    function errPedido($e){
+        echo '<script type="text/javascript">alert("'. $e .'"); window.location.href="../pedido.php";</script>';
+    }
+
+    function errLogin($e){
+        echo '<script type="text/javascript">alert("'. $e .'"); window.location.href="../entrar.php";</script>';
+    }
+
+    function sucDoc($e){
+        echo '<script type="text/javascript">alert("'. $e .'"); window.location.href="../dashboard/view/viewConsultarServico.php";</script>';
+    }
+
+    function errDoc($e){
+        echo '<script type="text/javascript">alert("'. $e .'"); window.location.href="../dashboard/view/viewConsultarServico.php";</script>';
+    }
+
+    function errConta($e){
+        echo '<script type="text/javascript">alert("'. $e .'"); window.location.href="../conta.php";</script>';
+    }
+
     function validaCPF($cpf){
  
         // Extrai somente os números
@@ -62,38 +86,63 @@
     }
 
     function validaRenavam($renavam) {
+        //https://github.com/eliseuborges/Renavam/blob/master/Renavam.php
+        #Completa com zeros a esquerda caso o renavam seja com 9 digitos
+        $renavam = str_pad($renavam, 11, "0", STR_PAD_LEFT); 
+        
+        #Valida se possui 11 digitos
+        if(!preg_match("/[0-9]{11}/", $renavam)){    
+            return false;
+        }
+        
+        $renavamSemDigito = substr($renavam, 0, 10);
+        $renavamReversoSemDigito = strrev($renavamSemDigito);
+        
+        // Multiplica as strings reversas do renavam pelos numeros multiplicadores
+        // Exemplo: renavam reverso sem digito = 69488936
+        // 6, 9, 4, 8, 8, 9, 3, 6
+        // * * * * * * * *
+        // 2, 3, 4, 5, 6, 7, 8, 9 (numeros multiplicadores - sempre os mesmos [fixo])
+        // 12 + 27 + 16 + 40 + 48 + 63 + 24 + 54
+        // soma = 284
+        
         $soma = 0;
-        // Cria array com as posições da string
-        $d = str_split($renavam);
-        $x = 0;
-        $digito = 0;
-    
-        // Calcula os 4 primeiros digitos do renavam fazendo o calculo da primeira posição do array * 5 e vai diminuindo até chegar a 2
-        for ($i=5; $i >= 2; $i--) { 
-            $soma += $d[$x] * $i;
-            $x++;
+        $multiplicador = 2;
+        for ($i = 0; $i < 10; $i++) {
+            $algarismo = substr($renavamReversoSemDigito, $i, 1);
+            $soma += $algarismo * $multiplicador;
+            
+            if( $multiplicador >=9 ){
+                $multiplicador = 2;
+            }else{
+                $multiplicador++;
+            }
         }
-    
-        // Faz o calculo de 11
-        $valor = $soma % 11;
-    
-        // Busca digito verificador
-        if ($valor == 11 || $valor == 0 || $valor >= 10) {	
-            $digito = 0;
-        } else {
-            $digito = $valor;
+        
+        # mod11 = 284 % 11 = 9 (resto da divisao por 11)
+        $mod11 = $soma % 11;
+        
+        #Faz-se a conta 11 (valor fixo) - mod11 = 11 - 9 = 2
+        $ultimoDigitoCalculado = 11 - $mod11;
+        
+        #ultimoDigito = Caso o valor calculado anteriormente seja 10 ou 11, transformo ele em 0
+        #caso contrario, eh o proprio numero
+        $ultimoDigitoCalculado = ($ultimoDigitoCalculado >= 10 ? 0 : $ultimoDigitoCalculado);
+ 
+        # Pego o ultimo digito do renavam original (para confrontar com o calculado)
+        $digitoRealInformado = substr($renavam, -1);
+  
+        #Comparo os digitos calculado e informado
+        if($ultimoDigitoCalculado == $digitoRealInformado){
+            return true;
         }
-    
-        // Verifica digito com a 5 posição do array
-        if ($digito == $d[4]) {
-            return 1;
-        } else {
-            return 0;
-        }
+        
+        return false;
     }
 
     function validaPlaca($placa){
-        $regex = '^[a-zA-Z]{3}[0-9][A-Za-z0-9][0-9]{2}$';
+        //https://pt.stackoverflow.com/questions/363630/placa-veículos-padrão-mercosul
+        $regex = '^[A-Z]{2,3}[0-9]{4}|[A-Z]{3,4}[0-9]{3}|[A-Z0-9]{7}$^';
 
         if(preg_match($regex, $placa) == false){
             return false;

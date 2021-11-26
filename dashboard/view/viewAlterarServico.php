@@ -9,7 +9,7 @@
 <body>
 <?php
 	include('../menu.php');
-  require_once('../../php/clienteDAO.php');
+  require_once('../../model/clienteDAO.php');
   require_once('../model/ServicosDAO.php');
 
   $codigo = $_GET['codigo'];

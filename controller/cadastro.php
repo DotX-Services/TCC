@@ -3,55 +3,86 @@
 	require_once('../model/clienteDTO.php');
 	require_once('../model/clienteDAO.php');
 	require_once('../utils/anti-csrf.php');
+	require_once('../utils/validacoes.php');
 	
 	$cDTO = new ClienteDTO();
 	$cDAO = new ClienteDAO();
 
-
 	if(isset($_POST['csrf_token']) && validateToken($_POST['csrf_token'])){
 		try{
-			
+
 			$clientes = $cDAO->obter_todos();
+			//print_r($clientes);
 
-			foreach ($clientes as $c){
-				if($c->get_email() == $_POST["inputEmail"]){
-					throw new Exception("E-mail já cadastrado!");
+			foreach ($clientes as $a){
+				if($a->get_email() == $_POST["inputEmail"]){
+					$emailBool = false;
+				}elseif($a->get_cpf() == $_POST["inputCPF"]){
+					$cpfBool = false;
 				}
-				elseif ($c->get_cpf() == $_POST["inputCPF"]){
-					throw new Exception("CPF já cadastrado!");
-				}
-				else{
-					$cDTO->set_nome(htmlspecialchars($_POST["inputNome"]));
-					$cDTO->set_cpf(htmlspecialchars($_POST["inputCPF"]));
-					$cDTO->set_cep(htmlspecialchars($_POST["inputCEP"]));
-					$cDTO->set_telefone(htmlspecialchars($_POST["inputTelefone"]));
-					$cDTO->set_email(htmlspecialchars($_POST["inputEmail"]));
-					$cDTO->set_senha(htmlspecialchars($_POST["inputSenha"]));
-					$cDTO->set_data(htmlspecialchars($_POST["inputNascimento"]));
+			}
 
-					if (($cDTO->get_senha() != $_POST["inputConfirmaSenha"])){
-						throw new Exception("Senha inválida! Digite novamente");
-					}
-						
-					if((strlen($cDTO->get_senha()<6))){
-						throw new Exception("Senha possui menos de 6 caracteres! Digite novamente");
-					}
-				
+			$nome = strip_tags($_POST["inputNome"]);
+			$cpf = strip_tags($_POST["inputCPF"]);
+			$cep = strip_tags($_POST["inputCEP"]);
+			$tel = strip_tags($_POST["inputTelefone"]);
+			$email = strip_tags($_POST["inputEmail"]);
+			$nasc = strip_tags($_POST["inputNascimento"]);
+
+			if($nome==null or empty($nome)){
+				errCadastro('Campo nome Inválido!');
+			}
+			elseif(validaCPF($cpf) == false or empty($cpf)){
+				errCadastro('CPF Inválido!');
+			}
+			elseif(validaCEP($cep) == false or empty($cep)){
+				errCadastro('CEP Inválido!');
+			}
+			elseif(validaTelefone($tel) == false or empty($tel)){
+				errCadastro('Telefone Inválido!');
+			}
+			elseif(validaEmail($email) == false or empty($email)){
+				errCadastro('E-mail Inválido!');
+			}
+			elseif($nasc==null or empty($nasc)){
+				errCadastro('Data de Nascimento Inválida!');
+			}
+			elseif($_POST["inputSenha"] != $_POST["inputConfirmaSenha"]){
+				errCadastro('Senhas diferentes!');
+			}
+			elseif(strlen($_POST["inputSenha"])<6){
+				errCadastro('Senha possui menos de 6 caracteres! Digite novamente');
+			}
+			else{
+				if($emailBool == false){
+					errCadastro("E-mail já cadastrado!");
+				}elseif($cpfBool == false){
+					errCadastro("CPF já cadastrado!");
+				}else{
+					$cDTO->set_nome(strip_tags($_POST["inputNome"]));
+					$cDTO->set_cpf(strip_tags($_POST["inputCPF"]));
+					$cDTO->set_cep(strip_tags($_POST["inputCEP"]));
+					$cDTO->set_telefone(strip_tags($_POST["inputTelefone"]));
+					$cDTO->set_email(strip_tags($_POST["inputEmail"]));
+					$cDTO->set_data(strip_tags($_POST["inputNascimento"]));
+					$cDTO->set_senha(strip_tags(md5($_POST["inputSenha"])));
+
 					if ($cDAO->inserir($cDTO)){
-						echo "Cadastro feito com sucesso!";
+						//echo "Cadastro feito com sucesso!";
 						header("Location: ../entrar.php");
 					}else{
-						echo "Erro no cadastro!";
+						errCadastro('Erro no cadastro!');
 						//echo "Erro ao inserir os dados no banco!";
 					}
 				}
 			}
+			
 		}catch(Exception $e){
-			echo "Erro no cadastro:";
-			echo "<br>";
+			errCadastro('Erro no cadastro!');
 			//echo $e->getMessage();
 		}
+	}else{
+		errCadastro('Anti-CSRF!');
 	}
 	
 ?>
-

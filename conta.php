@@ -47,7 +47,7 @@
         </nav>
         <div class="traco"></div>
         <div id="usuario">
-            <img src="https://avatars.dicebear.com/api/initials/<?php echo $c->get_nome().'.svg';?>" alt="Foto usuário">
+            <img src="https://avatars.dicebear.com/api/initials/<?php echo $c->get_nome().'.svg';?>" alt="Foto usuário" id="fotoUsuario">
         </div>
     </header>
     <main>
@@ -61,8 +61,8 @@
             <input type="text" name="inputCPF" id="inputCPF" placeholder="CPF" value = "<?php echo $c->get_cpf();?>">
             <input type="text" name="inputCEP" id="inputCEP" placeholder="CEP" value = "<?php echo $c->get_cep();?>">
             <input type="text" name="inputTelefone" id="inputTelefone" placeholder="Telefone" value = "<?php echo $c->get_telefone();?>">
-            <input type="email" name="inputEmail" id="inputEmail" placeholder="Email" value = "<?php echo $c->get_email();?>"> 
-            <input type="password" name="inputSenha" id="inputSenha" placeholder="Senha" value="<?php echo $c->get_senha(); ?>">
+            <input type="email" name="inputEmail" id="inputEmail" placeholder="Email" value = "<?php echo $c->get_email();?>">
+            <input type="hidden" name="session" id="session"value = "<?php echo $id; ?>">
         </form>
         <div id="buttons">
             <a href="statusDoPedido.php">Pedidos</a>

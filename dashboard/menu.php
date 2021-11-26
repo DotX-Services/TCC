@@ -12,6 +12,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles/dashboard.css">
+    <link rel="shortcut icon" type="imagex/png" href="../media/favicon.ico">
     <title>Dashboard</title>
 </head>
 <body>
@@ -25,9 +27,6 @@
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
           <a class="nav-link" href="/TCC/dashboard/menu.php">Home<span class="sr-only">(página atual)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Preços</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -44,10 +43,9 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="/TCC/dashboard/view/viewConsultarServico.php">Status</a>
-            <a class="dropdown-item" href="/TCC/dashboard/view/viewAlterarServico.php">Editar</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Outros</a>
+          <a class="nav-link" href="/TCC/dashboard/view/viewOutros.php">Outros</a>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled" href="/TCC/dashboard/logoutdashboard.php">Sair</a>

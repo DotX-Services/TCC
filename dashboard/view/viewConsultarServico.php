@@ -1,7 +1,7 @@
 <?php
     require_once('../model/ServicosDAO.php');
 	require_once('../model/ServicosDTO.php');
-	require_once('../../php/clienteDAO.php');
+	require_once('../../model/clienteDAO.php');
     
 	include('../menu.php');
 	
@@ -14,7 +14,7 @@
 		$servicos = $sDAO->obter_todos();	
 	}
 	else{
-		$servicos = $sDAO->obter_por_nome($_GET['nome']);
+		$servicos = $sDAO->obter_por_nome(strip_tags($_GET['nome']));
 	}
 	
 ?>
@@ -30,11 +30,14 @@
 				<th scope="col">Tipo</th>
 				<th scope="col">Renavam</th>
 				<th scope="col">Placa</th>
+				<th scope="col">Data_Pedido</th>
 				<th scope="col">Status do Pedido</th>
 				<th scope="col">Observações</th>
+				<th scope="col">Prazo</th>
+				<th scope="col">Preço</th>
 				<th scope="col">Salvar</th>
 				<th scope="col">Documentação</th>
-				<th scope="col">Editar</th>
+				<th scope="col">Enviar</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -51,25 +54,34 @@
 
 		echo "<tr>";
 		echo "<td>" . $s->get_codigo() . "</td>";
-		echo "<td>" . $s->get_codigoCliente() . "</td>";
-		echo "<td>" . $cDTO->get_nome() . "</td>";
+		echo "<td><a href='viewConsultarCliente.php?codigo=" . $s->get_codigoCliente() . "'</a>". $s->get_codigoCliente() ."</td>";
+		echo "<td>". $cDTO->get_nome() ."</td>";
 		echo "<td>" . $cDTO->get_email() . "</td>";
 		echo "<td>" . $s->get_tipo() . "</td>";
 		echo "<td>" . $s->get_renavam() . "</td>";
 		echo "<td>" . $s->get_placa() . "</td>";
+		echo "<td>" . $s->get_dataPedido() . "</td>";
 		echo "<form name ='formulario' id='formulario' method='POST' action='../salvar_status.php'>
 				<td>
 					<select name='status_pedido' id='status_pedido'>
-						<option id='cbAndamento' name='cbAndamento' value='Andamento'>Em Andamento</option>
-						<option id='cbAprovado' name='cbAprovado' value='Aprovado'>Aprovado</option>
-						<option id='cbPronto' name='cbPronto' value='Pronto'>Pronto</option>
+						<option id='cbAndamento' name='cbAndamento' value='cbAndamento'>Em Andamento</option>
+						<option id='cbAprovado' name='cbAprovado' value='cbAprovado'>Aprovado</option>
+						<option id='cbPronto' name='cbPronto' value='cbPronto'>Pronto</option>
 					</select>
 				</td>
-				<td><textarea placeholder='Observações...' rows='3' cols='45' wrap='hard' draggable='false' style='resize: none'></textarea></td>
-				<td><a href='javascript:document.querySelector('formulario').submit();'>Salvar</a></td>
+				<td><textarea placeholder='Observações...' rows='3' cols='45' wrap='hard' draggable='false' style='resize: none' name='observacao' id='observacao'>". $s->get_observacao() ."</textarea></td>
+				<td><input name='prazo' id='prazo' type='date' value='". $s->get_prazo() ."'></td>
+				<td><input name='preco' id='preco' type='number' value='". $s->get_preco() ."'></td>
+				<td><button type='submit' class='btnSalvar'>Salvar</button></td>
+				<input type='hidden' name='cs' id='cs' value='" . $s->get_codigo() . "'>
 			  </form>";
-		echo "<td><a href='#'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Upload&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></td>";
-		echo "<td><a href = '../view/viewAlterarCliente.php?codigo=" . $s->get_codigo() . "'>Alterar</a></td>";
+		echo "<form name ='formulario' id='formulario' method='POST' action='../enviar_doc.php' enctype='multipart/form-data'>
+					<td><input type='file' name='file' id='file' multiple='multiple'/>Upload</td>
+					<td><input type='submit' name='submit'></td>
+					<input type='hidden' name='email' value='". $cDTO->get_email() ."'/>
+					<input type='hidden' name='nome' value='". $cDTO->get_nome() ."' />
+					<input type='hidden' name='cc' value='". $s->get_codigoCliente() ."' />
+			  </form>";
 	}
 ?>
 			

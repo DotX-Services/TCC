@@ -7,35 +7,12 @@
     <script src="https://kit.fontawesome.com/2077a80796.js" crossorigin="anonymous"></script>
     <title>Política de Privacidade</title>
     <link rel="stylesheet" href="styles/politicas.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="shortcut icon" type="imagex/png" href="media/favicon.ico">
 </head>
 <body>
-    <a href="#"><img src="media/Chatbot.png" alt="chatbot" id="chatbot"></a>
-    <header>
-        <a href="index.php"><img src="media/Despachante.png" alt="Foto Despachante" id="fotoDespachante"></a>
-        <nav>
-            <ul>
-                <a href="#">
-                    <i class="fas fa-car-side"></i>
-                    <span>Nosso Serviço</span>
-                </a>
-                <a href="#">
-                    <i class="fas fa-map-marked"></i>
-                    <span>Onde nos encontrar</span>
-                </a>
-                <a href="#">
-                    <i class="fas fa-bullhorn"></i>
-                    <span>Fale conosco</span>
-                </a>
-            </ul>
-            <img src="media/Menu.png" alt="teste" id="menu">
-        </nav>
-        <div class="traco"></div>
-        <div id="usuario">
-            <p id="entrar"><a href="entrar.php">Entrar</a></p>
-            <p class="Abaixo"><a href="registrar.php">Cadastrar</a></p>
-        </div>
-    </header>
-
+    <?php include('includes/header.php'); ?>
     <main>
         <h1>Política de privacidade</h1>
         <h2>Política Privacidade</h2> 
@@ -84,22 +61,10 @@
         <p>Esperemos que esteja esclarecido e, como mencionado anteriormente, se houver algo que você não tem certeza se precisa ou não, geralmente é mais seguro deixar os cookies ativados, caso interaja com um dos recursos que você usa em nosso site.</p> 
         <p>Esta política é efetiva a partir de <strong>setembro</strong>/<strong>2021</strong>.</p>
     </main>
-
-    <footer>
-        <h2>Atendimento</h2>
-        <section>
-            <ul class="contato">
-                <li><i class="fas fa-phone-alt"></i><span>(19) 3272-7655</span></li>
-                <li><i class="fab fa-whatsapp"></i><a href="http://api.whatsapp.com/send?phone=5519991560933">Whatsapp</a></li>
-                <li><i class="far fa-envelope"></i><span>Despachante@despachante.com</span></li>
-            </ul>
-            <ul class="etc">
-                <li><a href="#">Formas de pagamento</a></li>
-                <li><a href="#">Serviços</a></li>
-                <li><a href="termosDeUso.php">Termos de uso</a></li>
-                <li><a href="politicaDePrivacidade.php">Política de privacidade</a></li>
-            </ul>
-        </section>
-    </footer>
+    <?php include('includes/footer.php'); ?>
+    <div id="chatbot">
+        <button type="button" class="chatLauncher" style="display:none;"></button>
+        <script src="scripts/chatbot.js"></script>
+    </div>
 </body>
 </html>

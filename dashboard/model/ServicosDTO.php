@@ -15,31 +15,16 @@
         private $placa;
         private $observacao;
         private $status_pedido;
-        //private $objCliente;
-
-        /**public function __construct(){
-            $this->objCliente = new ClienteDTO();
-        }
-
-        function get_objCliente(){
-            return $this->objCliente;
-        }**/
-
-        function set_objCliente($value){
-            if($value==null or empty($value)){
-                throw new Exception("Objeto cliente nulo!");
-            }
-            $this->objCliente = $value;
-        }
+        private $status_doc;
+        private $preco;
+        private $prazo;
+        private $data_pedido;
 
         function get_codigoCliente(){
             return $this->codigo_cliente;
         }
 
         function set_codigoCliente($value){
-            if($value==null or empty($value)){
-                throw new Exception("Codigo do cliente vazio!");
-            }
             $this->codigo_cliente = $value;
         }
 
@@ -49,9 +34,6 @@
         }
 
         function set_codigo($value){
-            if($value==null or empty($value)){
-                throw new Exception("Campo codigo nulo!");
-            }
             $this->codigo = $value;
         }
 
@@ -60,9 +42,6 @@
         }
 
         function set_tipo($value){
-            if($value==null or empty($value)){
-                throw new Exception("Campo tipo vazio!");
-            }
             $this->tipo = $value;
         }
 
@@ -71,15 +50,7 @@
         }
 
         function set_renavam($value){
-            if($value==null or empty($value)){
-                throw new Exception("Campo renavam inválido!");
-            }else{
-                //if(validaRenavam($value) == true){
-                    $this->renavam = $value;
-                //}else{
-                    //throw new Exception("Por favor insira um renavam válido!");
-                //}
-            }
+            $this->renavam = $value;
         }
 
         function get_placa(){
@@ -87,26 +58,15 @@
         }
         
         function set_placa($value){
-            if($value==null or empty($value)){
-                throw new Exception("Placa do veículo inválida!");
-            }else{
-                //if(validaPlaca($value) == true){
-                    $this->placa = $value;
-                //}else{
-                    //throw new Exception("Por favor insira uma placa de carro válido!");
-               //}
-            }
+            $this->placa = $value;
         }
 
         function get_observacao(){
-            return $this->$observacao;
+            return $this->observacao;
         }
 
         function set_observacao($value){
-            if($value==null or empty($value)){
-                $this->$observacao = 'Aguardando...';
-            }
-            $this->$observacao = $value;
+            $this->observacao = $value;
         }
 
         function get_status(){
@@ -114,10 +74,39 @@
         }
 
         function set_status($value){
-            if($value==null or empty($value)){
-                throw new Exception("Campo status inválido!");
-            }
             $this->status_pedido = $value;
+        }
+
+        function get_statusDoc(){
+            return $this->status_doc;
+        }
+
+        function set_statusDoc($value){
+            $this->status_doc = $value;
+        }
+
+        function get_preco(){
+            return $this->preco;
+        }
+
+        function set_preco($value){
+            $this->preco = $value;
+        }
+
+        function get_prazo(){
+            return $this->prazo;
+        }
+
+        function set_prazo($value){
+            $this->prazo = $value;
+        }
+
+        function get_dataPedido(){
+            return $this->data_pedido;
+        }
+
+        function set_dataPedido($value){
+            $this->data_pedido = $value;
         }
     }
 

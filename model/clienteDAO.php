@@ -94,7 +94,7 @@
                             $mail->send();
         
                             $_SESSION['msg'] = "<p style='color : green'>E-mail enviado com instruções para a recuperação da senha!</p>";
-                            header("Location: /TCC/login.html");
+                            header("Location: ../entrar.php");
                         }catch (Exception $e){
                             echo "Erro ao enviar o e-mail!";
                             //echo "Erro ao enviar o e-mail: {$mail->ErrorInfo}";
@@ -124,7 +124,7 @@
         
                         if($query_up_usuario){
                             $_SESSION['msg'] = "<p style='color : green'>Senha atualizada com sucesso!</p>";
-                            header("Location: /TCC/login.html");
+                            header("Location: ../entrar.php");
                         }else{
                             echo "<p style='color: #ff0000'>Erro: Tente Novamente!</p>";
                         }
@@ -177,9 +177,28 @@
             return $lista;
         }
 
+        function obter_por_codigo($codigo){
+            $lista = [];
+            $sql = $this->con->query("SELECT codigo, nome, cpf, cep, telefone, email, senha, datinha FROM clientes WHERE (codigo = '". $codigo ."');");
+     
+            while ($linha = $sql->fetch(PDO::FETCH_ASSOC)) {
+                $c = new ClienteDTO();
+                $c->set_codigo($linha['codigo']);
+                $c->set_nome($linha['nome']);
+                $c->set_cpf($linha['cpf']);
+                $c->set_cep($linha['cep']);
+                $c->set_telefone($linha['telefone']);
+                $c->set_email($linha['email']);
+                $c->set_senha($linha['senha']);
+                $c->set_data($linha['datinha']);
+                array_push($lista, $c);
+            }
+    
+            return $lista;
+        }
+
         function alterar($c){
-            //$sql = $this->con->query("UPDATE cliente SET nome = '" . $cliente->get_nome() . "', idade = " . $cliente->get_idade() . " WHERE (codigo = " . $cliente->get_codigo(). ")");
-            $sql = $this->con->query("UPDATE clientes SET nome = '". $c->get_nome() ."', cpf = '". $c->get_cpf() ."', cep =  '". $c->get_cep() ."', telefone = '". $c->get_telefone() ."', email = '". $c->get_email() ."', senha = '". $c->get_senha() ."', datinha = '". $c->get_data() ."' WHERE (codigo = " . $c->get_codigo(). ")");
+            $sql = $this->con->query("UPDATE clientes SET nome = '". $c->get_nome() ."', cpf = '". $c->get_cpf() ."', cep =  '". $c->get_cep() ."', telefone = '". $c->get_telefone() ."', email = '". $c->get_email() ."', datinha = '". $c->get_data() ."' WHERE (codigo = " . $c->get_codigo(). ")");
     
             if ($sql->rowCount() > 0){
                    return true;
@@ -220,19 +239,60 @@
         }
 
         function obter_nome($codigo){
-            $sql = $this->con->query("SELECT nome FROM clientes where codigo = ". $codigo ." ");
+            $sql = $this->con->query("SELECT nome FROM clientes WHERE (codigo = '". $codigo ."') ");
             $nome = $sql->fetch(PDO::FETCH_ASSOC);
             return $nome;
         }
 
         function obter_email($codigo){
-            $sql = $this->con->query("SELECT email FROM clientes where codigo = ". $codigo ." ");
+            $sql = $this->con->query("SELECT email FROM clientes WHERE (codigo = '". $codigo ."') ");
             $email = $sql->fetch(PDO::FETCH_ASSOC);
             return $email;
         }
 
+        function obter_cpf($codigo){
+            $sql = $this->con->query("SELECT cpf FROM clientes WHERE (codigo = '". $codigo ."') ");
+            $cpf = $sql->fetch(PDO::FETCH_ASSOC);
+            return $cpf;
+        }
 
-    
+        function obter_todos_except_email($email){
+            $lista = [];
+            $sql = $this->con->query("SELECT * FROM clientes WHERE NOT(email = '". $email ."') ");
+            
+            while ($linha = $sql->fetch(PDO::FETCH_ASSOC)) {
+                $c = new ClienteDTO();
+                $c->set_codigo($linha['codigo']);
+                $c->set_nome($linha['nome']);
+                $c->set_cpf($linha['cpf']);
+                $c->set_cep($linha['cep']);
+                $c->set_telefone($linha['telefone']);
+                $c->set_email($linha['email']);
+                $c->set_data($linha['datinha']);
+                array_push($lista, $c);
+            }
+            return $lista;
+        }
+
+        function obter_todos_except_cpf($cpf){
+            $lista = [];
+            $sql = $this->con->query("SELECT * FROM clientes WHERE NOT (cpf = '". $cpf ."') ");
+     
+            while ($linha = $sql->fetch(PDO::FETCH_ASSOC)) {
+                $c = new ClienteDTO();
+                $c->set_codigo($linha['codigo']);
+                $c->set_nome($linha['nome']);
+                $c->set_cpf($linha['cpf']);
+                $c->set_cep($linha['cep']);
+                $c->set_telefone($linha['telefone']);
+                $c->set_email($linha['email']);
+                $c->set_data($linha['datinha']);
+                array_push($lista, $c);
+            }
+            return $lista;
+        }
+
+
     }
 
 ?>

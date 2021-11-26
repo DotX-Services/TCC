@@ -9,9 +9,9 @@
 <body>
 <?php
 	include('../menu.php');
-  require_once('../../php/clienteDAO.php');
+  require_once('../../model/clienteDAO.php');
 
-  $codigo = $_GET['codigo'];
+  $codigo = strip_tags($_GET['codigo']);
   $dao = new ClienteDAO();
   $c = $dao->obter($codigo);
 ?>
@@ -44,10 +44,6 @@
   <div class="form-group">
     <label for="txt_data" for="pwd">Data:</label>
     <input type="date" class="form-control" id="txt_data" name="txt_data" value = "<?php echo $c->get_data();?>">
-  </div>
-  <div class="form-group">
-    <label for="txt_senha" for="pwd">Senha:</label>
-    <input type="password" class="form-control" id="txt_senha" name="txt_senha" value = "<?php echo $c->get_senha();?>">
   </div>
   <button type="submit" class="btn btn-default">Alterar</button>
 </form>
