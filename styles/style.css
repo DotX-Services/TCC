@@ -9,7 +9,6 @@
   --cor_letras: black;
   --max_width: 1200px;
   --min_width: 400px;
-  --imagem_tamanho: 400px;
   --espaçamento_baixo: 7em;
 }
 
@@ -33,7 +32,7 @@ div.main_branca {
 
 div.main_branca img {
   float: left;
-  width: var(--imagem_tamanho);
+  width: 400px;
   margin-right: 2rem;
 }
 
@@ -61,21 +60,21 @@ div.main_azul {
 
 div.main_azul img {
   float: right;
-  width: var(--imagem_tamanho);
+  width: 460px;
   margin-right: 10px;
 }
 
-#servicos {
+#servicosImg{
+  width: 550px;
+  height: 460px;
+}
+
+#servicos, #mapa {
   padding-bottom: 1em;
 }
 
-#mapa {
-  padding-bottom: 16em;
-}
-
-#mapa li{
-  margin-left: 50px;
-  font-size: 25px;
+#mapa{
+  height: 480px;
 }
 
 iframe {
@@ -86,7 +85,7 @@ iframe {
   margin-right: 10px;
 }
 
-div.main_azul p,
+.main_azul p,
 h1 {
   padding: 10px;
 }
@@ -157,29 +156,15 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media only screen and (max-width: 845px) {
-  #usuario{
-    flex-direction: column;
-  }
-
-  #entrar{
-    margin-bottom: 30px;
-  }
-  
-  nav a {
-    display: none;
-  }
-  .menu {
-    margin: 2em;
-    width: 60px;
-    display: block;
-  }
-  section {
-    flex-direction: column;
-  }
-  .etc {
-    margin-top: 10px;
-  }
   img#chatbot{
     width: 100px;
+  }
+  
+  #mapa{
+    height: 750px;
+  }
+
+  .main_azul img{
+    width: 400px;
   }
 }

@@ -13,6 +13,10 @@
     box-sizing: border-box;
 }
 
+main{
+    height: 100px;
+}
+
 /* Conteiner */
 
 .conteiner {
@@ -30,6 +34,7 @@
 
 .textoPrincipal {
     text-align: center;
+    margin-bottom: 40px;
     color: var(--color_secundaria);
     font-size: 30px;
     font-weight: bold;
@@ -76,6 +81,7 @@
 }
 
 .div-Logar {
+    margin-top: 30px;
     display: grid;
     grid-template-columns: auto;
     align-items: center;
@@ -101,6 +107,12 @@ input[type = email]:focus,input[type = text]:focus, input[type = password]:focus
     border: 2px solid var(--color_secundaria);
     width: 52vh;
     background-color: #ecf0f1d2;
+}
+
+/*Recaptcha*/
+
+.g-recaptcha{
+    margin: auto;
 }
 
 /* Link esqueci a senha */

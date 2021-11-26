@@ -1,104 +1,116 @@
 :root {
-    --color_principal: rgba(0, 156, 228, 0.37);
-    --color_secundaria: rgb(0, 154, 228);
-    --color_houver: rgb(3, 116, 182);
-    --font_principal: "Atkinson Hyperlegible", sans-serif;
-    --cor_letras: white;
-    --max_width: 1200px;
-    --min_width: 400px;
-    --espaçamento_baixo: 7em;
-  }
+  --color_principal: rgba(0, 156, 228, 0.37);
+  --color_secundaria: rgb(0, 154, 228);
+  --color_houver: rgb(3, 116, 182);
+  --font_principal: "Atkinson Hyperlegible", sans-serif;
+  --cor_letras: rgb(0, 0, 0);
+  --max_width: 1200px;
+  --min_width: 400px;
+  --espaçamento_baixo: 7em;
+}
 
 header {
-    background-color: var(--color_secundaria);
-    font-family: var(--font_principal);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  #chatbot{
-    display: none;
-  }
-  
-  header img {
-    width: 120px;
-  }
-  
-  nav a {
-    color: black;
-    font-family: var(--font_principal);
-    font-size: 25px;
-    text-decoration: none;
-    margin: 20px;
-    min-width: 845px;
-  }
-  
-  #menu {
-    display: none;
-  }
-  
-  header div.traco {
-    border-left: 6px solid black;
-    height: 70px;
-    border-radius: 5px;
-    width: 20px;
-    margin-left: 5px;
-  }
-  
-  .entrar {
-    color: white;
-    margin-bottom: 30px;
-  }
-  
-  div#usuario a {
-    padding: 10px 20px;
-    color: black;
-    font-weight: bold;
-    background-color: rgb(56, 182, 255);
-    border: 2px solid black;
-    border-radius: 10px;
-    font-family: var(--font_principal);
-    font-size: 20px;
-    text-decoration: none;
-  }
-  
-  #usuario {
-    margin-right: 30px;
-  }
-  
-  header input{
-    width: 60px;
-    display: none;
-  }
-  
-  #menuResponsivo a{
-    display: none;
-    font-family: var(--font_principal);
-    font-size: 21px;
-    text-align: center;
-    border: 1px solid black;
-    margin: 2px 0px;
-    padding: 8px;
-    color: black;
-    text-decoration: none;
-  }
+background-color: var(--color_secundaria);
+font-family: var(--font_principal);
+display: flex;
+align-items: center;
+justify-content: center;
+}
 
-  #fotoUsuario{
-    border-radius: 50%;
-    width: 100px;
-  }
+header img {
+width: 120px;
+}
 
-  @media only screen and (max-width: 845px) {
-    header input{
-      display: block;
-    }
+nav a {
+color: black;
+font-family: var(--font_principal);
+font-size: 25px;
+text-decoration: none;
+margin: 20px;
+min-width: 845px;
+}
 
-    nav a {
-      display: none;
-    }
-  
-    #servicos img{
-      width: 400px;
-    }
-  }
+.menu {
+display: none;
+margin-right: 15px;
+width: 70px;
+}
+
+.traco {
+border-left: 6px solid black;
+height: 70px;
+border-radius: 5px;
+width: 15px;
+margin-left: -8px;
+}
+
+#usuario{
+display: flex;
+}
+
+#usuario a {
+padding: 10px 20px;
+color: black;
+background-color: rgb(56, 182, 255);
+border: 2px solid black;
+border-radius: 10px;
+font-family: var(--font_principal);
+font-size: 20px;
+text-decoration: none;
+}
+
+#usuario p {
+flex: 1;
+margin-right: 20px;
+}
+
+#cadastro{
+font-weight: bold;
+}
+
+#menuResponsivo a{
+display: none;
+font-family: var(--font_principal);
+font-size: 21px;
+text-align: center;
+border: 1px solid black;
+margin: 2px 0px;
+padding: 8px;
+color: black;
+text-decoration: none;
+}
+
+#fotoUsuario{
+border-radius: 50%;
+width: 100px;
+}
+
+#chatbot{
+display: none;
+}
+
+@media only screen and (max-width: 845px) {
+.menu {
+  display: block;
+}
+
+#servicos img{
+  width: 400px;
+}
+
+nav a {
+  display: none;
+}
+
+#usuario{
+  flex-direction: column;
+}
+
+#entrar{
+  margin-bottom: 30px;
+}
+
+img#chatbot{
+  width: 100px;
+}
+}

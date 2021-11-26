@@ -31,13 +31,13 @@
                     </label>
                 </div>
             </main>
+            <div class="g-recaptcha" data-sitekey="YOUR_SECRET"></div>
                 <div class="esqueci-a-senha">
                    <a href="esqueci_senha.php">Esqueci minha senha</a>
                 </div>
                 <div class="div-btn-entrar">
                     <button type="submit" class="btn-entrar" onclick="return valida()">Entrar</button>
                 </div>
-                <div class="g-recaptcha" data-sitekey="YOUR_SECRET"></div>
         </form>
     </div>
     <script type="text/javascript">
