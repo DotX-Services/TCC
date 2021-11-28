@@ -91,7 +91,7 @@
                     }
 
                     foreach ($servicos as $s) {
-                        echo "<form action='controller/pagamento.php' method='POST'>
+                        echo "<form action='controller/pagamento2.php' method='POST'>
                                 <table>
                                     <tr>
                                         <th>". $s->get_tipo() ."</th>
@@ -129,7 +129,8 @@
                                 </table>
                                 <input type='hidden' name='preco' value='". $s->get_preco() ."'>
                                 <input type='hidden' name='nome' value='". $s->get_tipo() ."'>
-                                <input type='hidden' name='id' value='". $s->get_codigo() ."'> 
+                                <input type='hidden' name='codigo_servico' value='". $s->get_codigo() ."'> 
+                                <input type='hidden' name='codigo_cliente' value='". $s->get_codigoCliente() ."'>
                             </form>";
                     }
                 ?>

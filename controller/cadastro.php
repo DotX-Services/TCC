@@ -11,17 +11,32 @@
 	if(isset($_POST['csrf_token']) && validateToken($_POST['csrf_token'])){
 		try{
 
-			$clientes = $cDAO->obter_todos();
+			//$clientes = $cDAO->obter_todos();
 			//print_r($clientes);
 
-			foreach ($clientes as $a){
-				if($a->get_email() == $_POST["inputEmail"]){
-					$emailBool = false;
-				}elseif($a->get_cpf() == $_POST["inputCPF"]){
-					$cpfBool = false;
+			$cpfs = $cDAO->obter_todos_cpfs();
+			$emails = $cDAO->obter_todos_emails();
+			
+			foreach($emails as $e){
+				$emailBool = 0; //true
+				if($e->get_email() == $_POST["inputEmail"]){
+					$emailBool += 1; // false
+					break;
+				}else{
+					$emailBool = 0; //true
 				}
 			}
 
+			foreach($cpfs as $c){
+				$cpfBool = 0;
+				if($c->get_cpf() == $_POST["inputCPF"]){
+					$cpfBool += 1; //false
+					break;
+				}else{
+					$cpfBool = 0; //true
+				}
+			}
+			
 			$nome = strip_tags($_POST["inputNome"]);
 			$cpf = strip_tags($_POST["inputCPF"]);
 			$cep = strip_tags($_POST["inputCEP"]);
@@ -54,9 +69,9 @@
 				errCadastro('Senha possui menos de 6 caracteres! Digite novamente');
 			}
 			else{
-				if($emailBool == false){
+				if($emailBool >= 1){
 					errCadastro("E-mail já cadastrado!");
-				}elseif($cpfBool == false){
+				}elseif($cpfBool >= 1){
 					errCadastro("CPF já cadastrado!");
 				}else{
 					$cDTO->set_nome(strip_tags($_POST["inputNome"]));

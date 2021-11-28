@@ -35,8 +35,8 @@
             if($sql->rowCount() > 0){
                 $dados = $sql->fetch();
     
-                $_SESSION['loggedin'] = true;
-                $_SESSION['idUser'] = $dados['id'];
+                $_SESSION['loggedinAdmin'] = true;
+                $_SESSION['idAdmin'] = $dados['id'];
                 
                 return true;
             }else{
@@ -67,10 +67,10 @@
                     $query_up_usuario = $this->con->query("UPDATE clientes SET recuperar_senha = '". $chave_recuperar_senha ."' WHERE codigo ='". $row_usuario['codigo'] ."'");
                     
                     if($query_up_usuario){
-                        $link =  "http://localhost/TCC/php/atualizar_senha.php?chave=$chave_recuperar_senha";
+                        $link =  "http://localhost/TCC/atualizar_senha.php?chave=$chave_recuperar_senha";
                         try{
                             $mail = new PHPMailer(true);
-                            $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      
+                            //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      
                             $mail->isSMTP();                                            
                             $mail->Host       = 'smtp.gmail.com';                     
                             $mail->SMTPAuth   = true;                                   
@@ -120,7 +120,7 @@
                     if(!empty($dados['SendNovaSenha'])){
                         $senha_usuario = $dados['senha_usuario']; //$senha_usuario = password_hash($dados['senha_usuario'], PASSWORD_DEFAULT);
                         $recuperar_senha = 'NULL';
-                        $query_up_usuario = $this->con->query("UPDATE clientes SET senha ='". $senha_usuario ."', recuperar_senha ='". $recuperar_senha ."' WHERE codigo ='". $row_usuario['codigo'] ."'");
+                        $query_up_usuario = $this->con->query("UPDATE clientes SET senha ='". md5($senha_usuario) ."', recuperar_senha ='". $recuperar_senha ."' WHERE codigo ='". $row_usuario['codigo'] ."'");
         
                         if($query_up_usuario){
                             $_SESSION['msg'] = "<p style='color : green'>Senha atualizada com sucesso!</p>";
@@ -221,7 +221,7 @@
 
         function obter_todos(){
             $lista = [];
-            $sql = $this->con->query("SELECT codigo, nome, cpf, cep, telefone, email, datinha FROM clientes");
+            $sql = $this->con->query("SELECT * FROM clientes");
      
             while ($linha = $sql->fetch(PDO::FETCH_ASSOC)) {
                 $c = new ClienteDTO();
@@ -232,6 +232,32 @@
                 $c->set_telefone($linha['telefone']);
                 $c->set_email($linha['email']);
                 $c->set_data($linha['datinha']);
+                array_push($lista, $c);
+            }
+    
+            return $lista;
+        }
+
+        function obter_todos_emails(){
+            $lista = [];
+            $sql = $this->con->query("SELECT email FROM clientes");
+     
+            while ($linha = $sql->fetch(PDO::FETCH_ASSOC)) {
+                $c = new ClienteDTO();
+                $c->set_email($linha['email']);
+                array_push($lista, $c);
+            }
+    
+            return $lista;
+        }
+
+        function obter_todos_cpfs(){
+            $lista = [];
+            $sql = $this->con->query("SELECT cpf FROM clientes");
+     
+            while ($linha = $sql->fetch(PDO::FETCH_ASSOC)) {
+                $c = new ClienteDTO();
+                $c->set_cpf($linha['cpf']);
                 array_push($lista, $c);
             }
     
