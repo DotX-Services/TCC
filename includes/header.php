@@ -44,15 +44,15 @@
     </div>
 </header>
 <section id="menuResponsivo">
-    <a href="#" id="menuServ">
+    <a href="index.php#servicos" id="menuServ">
         <i class="fas fa-car-side"></i>
         <span>Nossos Serviços</span>
     </a>
-    <a href="#" id="menuEncon">
+    <a href="index.php#mapa" id="menuEncon">
         <i class="fas fa-map-marked"></i>
         <span>Onde nos encontrar</span>
     </a>
-    <a href="#" id="menuFale">
+    <a href="index.php#contato" id="menuFale">
         <i class="fas fa-bullhorn"></i>
         <span>Fale conosco</span>
     </a>

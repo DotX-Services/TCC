@@ -91,7 +91,7 @@
                     }
 
                     foreach ($servicos as $s) {
-                        echo "<form action='controller/pagamento2.php' method='POST'>
+                        echo "<form action='controller/pagamento.php' method='POST'>
                                 <table>
                                     <tr>
                                         <th>". $s->get_tipo() ."</th>

@@ -16,7 +16,7 @@
 
         private static function criar_conexao(){
             $dbserver = 'localhost';
-            $dbname = 'teste2';
+            $dbname = 'teste';
             $dbuser = 'root';
             $dbpass = '';
 

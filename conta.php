@@ -53,15 +53,15 @@
         </div>
     </header>
     <section id="menuResponsivo">
-        <a href="#" id="menuServ">
+        <a href="index.php#servicos" id="menuServ">
             <i class="fas fa-car-side"></i>
             <span>Nossos Serviços</span>
         </a>
-        <a href="#" id="menuEncon">
+        <a href="index.php#mapa" id="menuEncon">
             <i class="fas fa-map-marked"></i>
             <span>Onde nos encontrar</span>
         </a>
-        <a href="#" id="menuFale">
+        <a href="index.php#contato" id="menuFale">
             <i class="fas fa-bullhorn"></i>
             <span>Fale conosco</span>
         </a>
@@ -79,7 +79,7 @@
             <input type="text" name="inputCEP" id="inputCEP" placeholder="CEP" value = "<?php echo $c->get_cep();?>">
             <input type="text" name="inputTelefone" id="inputTelefone" placeholder="Telefone" value = "<?php echo $c->get_telefone();?>">
             <input type="email" name="inputEmail" id="inputEmail" placeholder="Email" value = "<?php echo $c->get_email();?>"> 
-            <input type="hidden" name="inputSenha" id="inputSenha" placeholder="Senha" value="<?php echo $c->get_senha(); ?>">
+            <input type="hidden" name="session" id="session" value="<?php echo $id ?>">
         </form>
         <div id="buttons">
             <a href="statusDoPedido.php">Pedidos</a>
