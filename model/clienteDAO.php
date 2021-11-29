@@ -93,8 +93,7 @@
         
                             $mail->send();
         
-                            $_SESSION['msg'] = "<p style='color : green'>E-mail enviado com instruções para a recuperação da senha!</p>";
-                            header("Location: ../entrar.php");
+                            errRed("E-mail enviado com as instruções");
                         }catch (Exception $e){
                             echo "Erro ao enviar o e-mail!";
                             //echo "Erro ao enviar o e-mail: {$mail->ErrorInfo}";
@@ -110,52 +109,52 @@
             }
         }
 
-        public function atualizar_senha($chave){
-            if(!empty($chave)){
-                $sql = $this->con->query("SELECT codigo FROM clientes WHERE recuperar_senha = '". $chave ."' LIMIT 1");
-        
-                if(($sql) AND ($sql->rowCount() != 0)){
-                    $row_usuario = $sql->fetch(PDO::FETCH_ASSOC);
-                    $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-                    if(!empty($dados['SendNovaSenha'])){
-                        $senha_usuario = $dados['senha_usuario']; //$senha_usuario = password_hash($dados['senha_usuario'], PASSWORD_DEFAULT);
-                        $recuperar_senha = 'NULL';
-                        $query_up_usuario = $this->con->query("UPDATE clientes SET senha ='". md5($senha_usuario) ."', recuperar_senha ='". $recuperar_senha ."' WHERE codigo ='". $row_usuario['codigo'] ."'");
-        
-                        if($query_up_usuario){
-                            $_SESSION['msg'] = "<p style='color : green'>Senha atualizada com sucesso!</p>";
-                            header("Location: ../entrar.php");
-                        }else{
-                            echo "<p style='color: #ff0000'>Erro: Tente Novamente!</p>";
-                        }
-                    }
-                }else{
-                    $_SESSION['msg'] = "<p style='color: #ff0000'>Erro: Link inválido, solicite um novo link para mudar a sua senha!</p>";
-                    header("Location: esqueci_senha.php");
-                }
-                
-            }else{
-                $_SESSION['msg'] = "<p style='color: #ff0000'>Erro: Link inválido, solicite um novo link para mudar a sua senha!</p>";
-                header("Location: esqueci_senha.php");
-            }
-        }
 
-        function obter($codigo){
-            $sql =$this->con->query("SELECT codigo, nome, cpf, cep, telefone, email, senha, datinha FROM clientes WHERE (codigo = '" . $codigo . "');");
-            $linha = $sql->fetch(PDO::FETCH_ASSOC);
-    
-            $c = new ClienteDTO();
-            $c->set_codigo($linha['codigo']);
-            $c->set_nome($linha['nome']);
-            $c->set_cpf($linha['cpf']);
-            $c->set_cep($linha['cep']);
-            $c->set_telefone($linha['telefone']);
-            $c->set_email($linha['email']);
-            $c->set_senha($linha['senha']);
-            $c->set_data($linha['datinha']);
-    
-            return $c;
-        }
+        public function atualizar_senha($chave){
+                    if(!empty($chave)){
+                        $sql = $this->con->query("SELECT codigo FROM clientes WHERE recuperar_senha = '". $chave ."' LIMIT 1");
+                
+                        if(($sql) AND ($sql->rowCount() != 0)){
+                            $row_usuario = $sql->fetch(PDO::FETCH_ASSOC);
+                            $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+                            if(!empty($dados['SendNovaSenha'])){
+                                $senha_usuario = $dados['senha_usuario']; //$senha_usuario = password_hash($dados['senha_usuario'], PASSWORD_DEFAULT);
+                                $recuperar_senha = 'NULL';
+                                $query_up_usuario = $this->con->query("UPDATE clientes SET senha ='". md5($senha_usuario) ."', recuperar_senha ='". $recuperar_senha ."' WHERE codigo ='". $row_usuario['codigo'] ."'");
+                
+                                if($query_up_usuario){
+                                    errRed("Senha alterada com sucesso!");
+                                }else{
+                                    echo "<p style='color: #ff0000'>Erro: Tente Novamente!</p>";
+                                }
+                            }
+                        }else{
+                            $_SESSION['msg'] = "<p style='color: #ff0000'>Erro: Link inválido, solicite um novo link para mudar a sua senha!</p>";
+                            header("Location: esqueci_senha.php");
+                        }
+                        
+                    }else{
+                        $_SESSION['msg'] = "<p style='color: #ff0000'>Erro: Link inválido, solicite um novo link para mudar a sua senha!</p>";
+                        header("Location: esqueci_senha.php");
+                    }
+                }
+
+                function obter($codigo){
+                    $sql =$this->con->query("SELECT codigo, nome, cpf, cep, telefone, email, senha, datinha FROM clientes WHERE (codigo = '" . $codigo . "');");
+                    $linha = $sql->fetch(PDO::FETCH_ASSOC);
+            
+                    $c = new ClienteDTO();
+                    $c->set_codigo($linha['codigo']);
+                    $c->set_nome($linha['nome']);
+                    $c->set_cpf($linha['cpf']);
+                    $c->set_cep($linha['cep']);
+                    $c->set_telefone($linha['telefone']);
+                    $c->set_email($linha['email']);
+                    $c->set_senha($linha['senha']);
+                    $c->set_data($linha['datinha']);
+            
+                    return $c;
+                }
 
         function obter_por_nome($nome){
             $lista = [];

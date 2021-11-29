@@ -23,6 +23,10 @@
     function errConta($e){
         echo '<script type="text/javascript">alert("'. $e .'"); window.location.href="../conta.php";</script>';
     }
+    
+    function errRed($e){
+        echo '<script type="text/javascript">alert("'. $e .'"); window.location.href="../TCC/index.php";</script>';
+    }
 
     function get_endereco($cep){
         // formatar o cep removendo caracteres nao numericos
